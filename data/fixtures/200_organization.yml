@@ -1,0 +1,82 @@
+Organization:
+  1:
+    name: Universitas Indonesia
+    product: Pendidikan
+    note: Sample of tree, a parent with many branches
+    children:
+      1_4:
+        name: Fakultas Teknik UI
+        children:
+          1_4_1: 
+            name: Departemen Sipil FTUI
+          1_4_2: 
+            name: Departemen Mesin FTUI
+          1_4_3: 
+            name: Departemen Elektro FTUI
+          1_4_4: 
+            name: Departemen Metalurgi dan Material FTUI
+          1_4_5: 
+            name: Departemen Arsitektur FTUI
+          1_4_6: 
+            name: Departemen Kimia FTUI
+          1_4_7: 
+            name: Departemen Teknik Industri FTUI
+          1_4_8: 
+            name: Departemen Perkapalan FTUI
+      1_8:
+        name: Fakultas Psikologi UI
+  0:
+    org_id: 100
+    name: Freelance (Tanpa Organisasi)
+  25 epsi CJA:
+    org_id: 25
+    name: Citra Jayaara Andalan
+    prefix: PT.
+  35 Rizqi Baja Beton:
+    org_id: 35
+    name: Ikan Lele
+    prefix: UD
+    product: ..Cat & Fish.. Business
+    note:   Ordinary test    
+  283 Aswil:
+    org_id: 283
+    name: Dexa Medica
+    prefix: PT.
+    product: Obat-obatan
+
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  fake_<?php echo $i ?>:
+    org_id: <?php echo ($h=$i)."\n" ?>
+    name:    Induk Usaha <?php echo $i."\n" ?>
+    prefix:  PT.
+    product: Produk <?php echo $i."\n" ?>
+    note:    Holding Company
+    created_at:  '2010-06-01'
+    updated_at:  <?php echo "'".'2010-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+    children:
+      fake_<?php echo $h ?>_1:
+        org_id:  <?php echo (++$i)."\n" ?>
+        name:    Toko <?php echo $i."\n" ?>
+        prefix:  PD.
+        product: Dagang <?php echo $i."\n"; ?>
+        note:    Shop
+        created_at:  '2010-12-01'
+        updated_at:  <?php echo "'".'2010-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+      fake_<?php echo $h ?>_2:
+        org_id:  <?php echo (++$i)."\n" ?>
+        name:    Usaha <?php echo $i."\n" ?>
+        prefix:  CV.
+        product: Jasa   <?php echo $i."\n"; ?>
+        note:    Small Services Business
+        created_at:  '2011-01-01'
+        updated_at:  <?php echo "'".'2010-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+      fake_<?php echo $h ?>_3:
+        org_id:  <?php echo (++$i)."\n" ?>
+        name:    Pabrik <?php echo $i."\n" ?>
+        product: Olahan <?php echo $i."\n"; ?>  
+        prefix:  UD.
+        note:    Home Industry
+        created_at:  '2011-02-01'
+        updated_at:  <?php echo "'".'2010-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+         
+<?php endfor; ?>

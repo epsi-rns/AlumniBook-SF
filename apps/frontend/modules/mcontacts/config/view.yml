@@ -1,0 +1,14 @@
+all:
+  metas: { title: Job Contacts }
+
+showSuccess:
+  metas: { title: Job Contact :: Show }
+
+newSuccess:
+  metas: { title: Job Contact :: Add }
+
+editSuccess:
+  metas: { title: Job Contact :: Update }
+
+listSuccess:
+  metas: { title: Job Contacts by Map }

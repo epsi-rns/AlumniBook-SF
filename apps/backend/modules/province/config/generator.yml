@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Province
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          province
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendProvince
+        title: Manage Province Names
+        sort: [province_id, asc]
+        display: [=province]  
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Province "<i>%%province%%</i>"
+      new:
+        title: New Province
+        
+      fields:
+        province_id:
+          label: ID

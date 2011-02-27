@@ -1,0 +1,32 @@
+ContactType:
+  1:
+    ct_id: 3
+    Translation:
+      en:
+        contact_type: Mobile Phone
+      id:
+        contact_type: Telepon Genggam    
+  2:
+    ct_id: 4
+    Translation:
+      en:
+        contact_type: Phone
+      id:
+        contact_type: Telepon
+  3:
+    ct_id: 6
+    Translation:
+      en:
+        contact_type: Faximile
+      id:
+        contact_type: Faksimili
+  4:
+    ct_id: 8
+    contact_type: e-mail
+  5:
+    ct_id: 9
+    Translation:
+      en:
+        contact_type: Website
+      id:
+        contact_type: Situs Web

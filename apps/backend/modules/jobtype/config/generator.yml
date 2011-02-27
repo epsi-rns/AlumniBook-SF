@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           JobType
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          job_type
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendJobType
+        title: Manage Occupation (Job Type) Categories
+        sort: [job_type_id, asc]
+        display: [=job_type]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Occupation (Job Type) Category "<i>%%job_type%%</i>"
+      new:
+        title: New Occupation (Job Type) Category
+        
+      fields:
+        job_type:
+          label: Occupation
+        job_type_id:
+          label: ID

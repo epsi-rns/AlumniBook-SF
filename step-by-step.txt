@@ -1,0 +1,424 @@
+[:Reading:]
+http://www.symfony-project.org/jobeet/1_4/Doctrine/en/
+http://www.doctrine-project.org/projects/orm/1.2/docs/manual/en
+
+=== section 01 ===
+
+$ mkdir -p /var/www/symfony/alumni
+$ cd /var/www/symfony/alumni
+
+[:note:] alternate: /home/your-name/www/alumni
+
+$ mkdir -p lib/vendor
+$ cd lib/vendor
+
+$ tar zxpf symfony-1.4.0.tgz
+$ mv symfony-1.4.0 symfony
+$ rm symfony-1.4.0.tgz
+
+$ cd ../..
+$ php lib/vendor/symfony/data/bin/symfony -V
+symfony version 1.4.8 (/var/www/symfony/alumni/lib/vendor/symfony/lib)
+
+$ symfony -V
+symfony version 1.4.6 (/usr/share/php/symfony)
+
+# pear channel-discover pear.symfony-project.com
+# pear install symfony/symfony
+#_old_# pear channel-update pear.symfony-project.com
+#_old_# pear upgrade symfony/symfony
+
+== startup ==
+
+$ symfony generate:project alumni
+>> dir+      /var/www/symfony/alumni/cache
+>> dir+      /var/www/symfony/alumni/lib/form
+>> file+     /var/www/symfony/alumni/lib/form/BaseForm.class.php
+...
+
+$ symfony project:permissions
+
+[:permission:]
+sudo chown -cR 33:33  www/alumni/
+find www/alumni -type f -exec sudo chmod 744 {} \;
+find www/alumni -type d -exec sudo chmod 755 {} \;  
+
+$ symfony generate:app frontend
+>> dir+      /var/www/symfony/alumni/apps/frontend/lib
+>> file+     /var/www/symfony/alumni/apps/frontend/lib/myUser.class.php
+...
+
+[:note:] $ symfony generate:module frontend religion
+
+
+$ chmod 777 cache/ log/
+
+[:edit:]
+# cat /etc/apache2/sites-available/alumni
+<VirtualHost *:80>
+  ServerName alumni
+  DocumentRoot "/var/www/symfony/alumni/web"
+  ...
+</VirtualHost>
+
+# a2ensite symfony
+
+[:edit:]
+# cat /etc/hosts
+127.0.0.1 alumni 
+
+[:browse:] http://alumni/
+
+
+=== section 03 ===
+
+$ mysqladmin -uroot -p create sf_alumni
+
+$ symfony configure:database "mysql:host=localhost;dbname=sf_alumni" root mYsEcret
+
+[:edit:] 
+== change `dbname` to `sf_alumni`
+$ pico config/databases.yml 
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sf_alumni
+      username: root
+      password:
+
+== Schema ==
+
+[:create:]
+== schema.yml: You should manually create it with your favorite editor
+
+$ geany config/doctrine/schema.yml
+Alumni:
+  actAs: { Timestampable: ~ }
+  columns:
+    name:   { type: string(50), notnull: true, unique: true }
+...
+    
+$ symfony doctrine:build-schema
+>> doctrine  generating yaml schema from database
+
+$ mysql -u root
+mysql> use sf_alumni;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+$ symfony doctrine:build --model
+$ symfony doctrine:build --sql
+$ symfony doctrine:insert-sql
+$ symfony doctrine:build --all --no-confirmation
+$ symfony -t doctrine:data-load
+
+$ symfony doctrine:build --all --and-load \
+	--no-confirmation  --application=frontend
+
+
+>> doctrine  Dropping "doctrine" database
+>> doctrine  Creating "dev" environment "doctrine" database
+>> doctrine  generating model classes
+>> file+     /tmp/doctrine_schema_66413.yml
+>> tokens    /var/www/symfony/alumni/lib/model/doctrine/AlumniTable.class.php
+...
+
+mysql> show tables;
++---------------------+
+| Tables_in_sf_alumni |
++---------------------+
+| alumni              |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> explain alumni;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | bigint(20)  | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(50) | NO   | UNI | NULL    |                |
+| prefix     | varchar(15) | YES  |     | NULL    |                |
+| suffix     | varchar(15) | YES  |     | NULL    |                |
+| created_at | datetime    | NO   |     | NULL    |                |
+| updated_at | datetime    | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.04 sec)
+
+== Initial Sample Data ==
+
+$ geany data/fixtures/100_alumni.yml
+alumni:
+  1:
+    name:   Epsiarto Rizqi Nurwijayadi
+    suffix: ST
+  2:
+    name:   Aswil Nazir
+    prefix: Ir.
+  3: 
+    name:   Desrinda Syahfarin:
+    suffix: ST, MSc.
+  4:
+    name:   Idris Hadi Sikumbang
+    suffix: ST, MSc.
+
+$ symfony doctrine:data-load
+>> doctrine  Loading data fixtures from "/var/www/symfony/alumni/data/fixtures"
+>> doctrine  Data was successfully loaded
+
+$ symfony doctrine:build --all --and-load
+
+mysql> select * from alumni;
++----+----------------------------+--------+----------+---------------------+---------------------+
+| id | name                       | prefix | suffix   | created_at          | updated_at          |
++----+----------------------------+--------+----------+---------------------+---------------------+
+|  1 | Epsiarto Rizqi Nurwijayadi | NULL   | ST       | 2010-10-13 22:04:31 | 2010-10-13 22:04:31 |
+|  2 | Aswil Nazir                | Ir.    | NULL     | 2010-10-13 22:04:31 | 2010-10-13 22:04:31 |
+|  3 | Desrinda Syahfarin:        | NULL   | ST, MSc. | 2010-10-13 22:04:31 | 2010-10-13 22:04:31 |
+|  4 | Idris Hadi Sikumbang       | NULL   | ST, MSc. | 2010-10-13 22:04:31 | 2010-10-13 22:04:31 |
++----+----------------------------+--------+----------+---------------------+---------------------+
+4 rows in set (0.00 sec)
+
+[:hint:]
+$ symfony doctrine:data-dump
+$ symfony doctrine:dql "from Alumni a"
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend alumni Alumni
+	
+>> dir+      /var/www/symfony/alumni/apps/frontend/modules/alumni/actions
+>> file+     /var/www/symfony/alumni/apps/frontend/modules/alumni/actions/actions.class.php
+...
+
+[:browse:] http://alumni/frontend_dev.php/alumni
+[:browse:] http://alumni/frontend_dev.php/alumni/edit/aid/1
+
+== alumni part ==
+
+[:edit:]
+$ cat lib/model/doctrine/Religion.class.php
+class Religion extends BaseReligion
+{
+  public function __toString()
+  {
+    return sprintf('%s', $this->get('religion'));
+  }
+}
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend department Department
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend community Community
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend acommunities ACommunities
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend acompetencies ACompetencies
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend acertifications ACertifications
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend aexperiences AExperiences
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend adegrees ADegrees
+	
+[:browse:] http://alumni/frontend_dev.php/community
+[:browse:] http://alumni/frontend_dev.php/acommunities
+[:browse:] http://alumni/acommunities/list/aid/25
+[:browse:] http://alumni/adegrees/list/aid/25
+
+== organization part ==	
+
+[:require-plugin:]
+$ symfony plugin:install sfDoctrineNestedSetPlugin
+$ symfony plugin:list
+$ symfony cc
+
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend org Organization
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend amap AOMap
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend omap AOMap
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend ofields OFields
+
+[:browse:] http://alumni/frontend_dev.php/amap/list/aid/25
+[:browse:] http://alumni/frontend_dev.php/omap/list/oid/35
+[:browse:] http://alumni/frontend_dev.php/ofields/list/oid/283
+
+== address and contact part ==	
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend acontacts AContacts
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend ocontacts OContacts
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend mcontacts MContacts
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend residence AAddress
+
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend office OAddress
+	
+$ symfony doctrine:generate-module --with-show --non-verbose-templates \
+	frontend workplace MAddress
+		
+	
+[:browse:] http://alumni/frontend_dev.php/acontacts/list/aid/25
+[:browse:] http://alumni/frontend_dev.php/ocontacts/list/oid/35
+[:browse:] http://alumni/frontend_dev.php/mcontacts/list/mid/1
+
+[:browse:] http://alumni/frontend_dev.php/residence/list/aid/25
+[:browse:] http://alumni/frontend_dev.php/office/list/oid/35
+[:browse:] http://alumni/frontend_dev.php/workplace/list/mid/1
+
+== alumni detail part ==
+routing.yml
+
+alumni_detail:
+  url:   /adet/:id
+  param: { module: alumni, action: detail }
+
+[:browse:] http://alumni/frontend_dev.php/field/
+
+=== section 04 ===
+$ symfony log:clear
+$ tar -czvf ../110225.symfony-alumni-1.0.tgz * \
+	--exclude cache --exclude log --exclude lib/vendor --exclude web/js/fw
+
+[:create:]
+$ geany apps/frontend/modules/alumni/config/view.yml
+indexSuccess:
+  stylesheets: [jobs.css]
+
+showSuccess:
+  stylesheets: [job.css]
+  
+$ symfony generate:task oriclone:compress-css  
+  
+=== section 05 ===
+
+[:original:]
+http://alumni/frontend_dev.php/acompetencies/category
+http://alumni/frontend_dev.php/acompetencies/filter/id/1
+http://alumni/frontend_dev.php/acompetencies/show/did/1
+http://alumni/frontend_dev.php/acompetencies/edit/did/1
+http://alumni/frontend_dev.php/acompetencies/list/aid/25
+http://alumni/frontend_dev.php/acompetencies/new/aid/25
+
+compy_all_cat:  
+  url:   /compy
+  param: { module: acompetencies, action: category }
+  
+compy_by_cat:  
+  url:   /compy/:id
+  param: { module: acompetencies, action: filter }
+  requirements: { sf_method: [get], id: \d+ }
+
+acompetencies:
+  class:   sfDoctrineRouteCollectionDetail
+  options: 
+    model: 		   ACompetencies
+    module:        acompetencies
+    prefix_path:   acompetencies
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+     
+[:routed:]  
+http://alumni/frontend_dev.php/compy
+http://alumni/frontend_dev.php/compy/1 
+http://alumni/frontend_dev.php/acompetencies/1 
+http://alumni/frontend_dev.php/acompetencies/1/edit
+http://alumni/frontend_dev.php/acompetencies/25/list
+http://alumni/frontend_dev.php/acompetencies/25/new
+
+$ symfony app:routes backend
+$ symfony app:routes frontend acompetencies_list
+
+
+=== section 12 ===
+  
+$ symfony generate:app backend
+$ symfony help doctrine:generate-admin
+$ symfony plugin:publish-assets
+
+
+$ symfony doctrine:generate-admin backend Program --module=program
+$ symfony doctrine:generate-admin backend Department --module=department
+$ symfony doctrine:generate-admin backend Faculty --module=faculty
+$ symfony doctrine:generate-admin backend Community --module=community
+
+
+$ symfony doctrine:generate-admin backend Competency --module=competency
+$ symfony doctrine:generate-admin backend JobType --module=jobtype
+$ symfony doctrine:generate-admin backend JobPosition --module=jobposition
+$ symfony doctrine:generate-admin backend BizField --module=field
+$ symfony doctrine:generate-admin backend Strata --module=strata
+
+$ symfony doctrine:generate-admin backend Country --module=Country
+$ symfony doctrine:generate-admin backend Province --module=Province
+$ symfony doctrine:generate-admin backend District --module=District
+
+$ symfony doctrine:generate-admin backend Religion --module=religion
+$ symfony doctrine:generate-admin backend ContactType --module=contacttype  
+
+[:browse:] http://alumni/backend_dev.php/community
+
+=== section 13 ===
+
+$ symfony plugin:install sfDoctrineGuardPlugin
+$ symfony doctrine:build --all --and-load --no-confirmation
+$ symfony guard:create-user epsi.rns@gmail.com iluni iluni
+$ symfony guard:promote iluni
+$ symfony list guard
+
+$ symfony cache:clear
+$ symfony project:optimize frontend
+
+=== section 14 ===
+$ curl http://alumni/frontend_dev.php/main/feed.atom
+
+=== section 19 ===
+$ symfony i18n:extract frontend id --auto-save
+
+=== bonus ===
+$ symfony configure:author "E.R. Nurwijayadi <epsi.rns@gmail.com>"
+
+=== deploy ===
+$ ssh your-name@your-site.org
+$ scp -r symfony/* your-name@your-site.org:~/symfony/
+$ ncftpput –R –v –u "your-name" your-site.org /your-server-home /var/www/symfony/alumni
+
+$
+./symfony project:permissions
+./symfony project:disable frontend dev
+./symfony project:disable frontend test
+./symfony project:disable backend dev
+./symfony project:disable backend test
+./symfony log:clear
+./symfony cache:clear
+sh ~/reset-alumnibook.sh
+
+If your host not allow symfony and project outside www directory.
+Put project as www/alumni, then add .htacess file
+
+	order allow,deny
+	deny from all
+

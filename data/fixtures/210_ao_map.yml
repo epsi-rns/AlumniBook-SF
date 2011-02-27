@@ -1,0 +1,28 @@
+aomap:
+  epsi:
+    mid:    1
+    aid:    25
+    org_id: 25
+    job_type_id:     6
+    job_position_id: 1
+  Rizqi:
+    mid:    2
+    aid:    25
+    org_id: 35
+    job_type_id:     3
+    job_position_id: 6
+  Aswil:
+    aid:    283
+    org_id: 283
+    department:  Corporate IT
+    job_type_id:     3
+    job_position_id: 6
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  map_<?php echo $i ?>:
+    mid:    <?php echo $i."\n" ?>
+    aid:    <?php echo $i."\n" ?>
+    org_id: <?php echo $i."\n" ?>
+    job_type_id:     <?php echo (($i % 10))."\n" ?>  
+    job_position_id: <?php echo (($i % 9) + 1)."\n" ?>    
+    description: Mapping number <?php echo $i."\n" ?>
+<?php endfor ?>

@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Competency
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          competency
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Competency Categories
+        sort: [competency_id, asc]
+        display: [=competency]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Competency Category "<i>%%competency%%</i>"
+      new:
+        title: New Competency Category
+        
+      fields:
+        fcompetency:
+          help: Personal Competency Category
+        competency_id:
+          label: ID

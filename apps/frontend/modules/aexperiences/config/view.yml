@@ -1,0 +1,14 @@
+all:
+  metas: { title: Experiences }
+
+showSuccess:
+  metas: { title: Experience :: Show }
+
+newSuccess:
+  metas: { title: Experience :: Add }
+
+editSuccess:
+  metas: { title: Experience :: Update }
+
+listSuccess:
+  metas: { title: Experiences by Alumna/us }

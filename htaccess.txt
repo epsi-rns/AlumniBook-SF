@@ -1,0 +1,3 @@
+# fix security, if you want to flip project under web directory
+order allow,deny
+deny from all

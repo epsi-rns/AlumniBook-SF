@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+  ServerName alumnibook
+  DocumentRoot "/var/www/symfony/alumnibook/web"
+  DirectoryIndex index.php
+  <Directory "/var/www/symfony/alumnibook/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf /usr/share/php/data/symfony/web/sf
+  <Directory "/usr/share/php/data/symfony/web/sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
+

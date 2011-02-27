@@ -1,0 +1,21 @@
+ACompetencies:
+  Rizqi:
+    aid: 25
+    competency_id: 3
+    description: Sistim Informasi, Aplikasi Web
+  Nurwijayadi:
+    aid: 25
+    competency_id: 1
+    description: Bisnis Ikan Air Tawar
+  Aswil:
+    aid: 283
+    competency_id: 2
+  Jos:
+    aid: 5
+    competency_id: 7
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  anon_<?php echo $i ?>:
+    aid: <?php echo $i."\n" ?>
+    competency_id: <?php echo (($i % 8) + 1)."\n" ?>
+    description: Compete-<?php echo $i."\n" ?>
+<?php endfor ?>

@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           BizField
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          field
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Business Field Categories
+        sort: [biz_field_id, asc]
+        display: [=biz_field]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Business Field Category "<i>%%biz_field%%</i>"
+      new:
+        title: New Business Field Category
+        
+      fields:
+        biz_field:
+          label: Business Field
+          help: Business Line Category for Organization/ Company
+        biz_field_id:
+          label: ID

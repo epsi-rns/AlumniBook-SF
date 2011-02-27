@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Faculty
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          faculty
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:      
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Faculties
+        sort: [faculty_id, asc]
+        display: [=faculty]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Faculty "<i>%%faculty%%</i>"
+      new:
+        title: New Faculty
+
+      fields:
+        faculty:
+          help: A faculty name
+
+

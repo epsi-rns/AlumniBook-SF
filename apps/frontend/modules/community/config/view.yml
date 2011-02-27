@@ -1,0 +1,13 @@
+all:
+  metas: { title: All Communities }
+
+showSuccess:
+  metas: { title: Community :: Show }
+
+newSuccess:
+  metas: { title: Community :: Add }
+  javascripts: [moo/request.js]
+
+editSuccess:
+  metas: { title: Community :: Update }
+  javascripts: [moo/request.js]

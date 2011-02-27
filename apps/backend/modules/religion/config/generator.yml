@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Religion
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          religion
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: List of Religion
+        sort: [religion_id, asc]
+        display: [=religion]
+        batch_actions: {} 
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

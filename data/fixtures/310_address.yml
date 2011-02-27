@@ -1,0 +1,51 @@
+AAddress:
+  1:
+    lid: 25
+    area:     Pakualaman
+    street:       Purwanggan 8
+    province_id: 16
+    district_id:  248
+    
+<?php for ($i = 101; $i <= 110; $i++): ?>
+  a_address_<?php echo $i ?>:
+    lid:    <?php echo $i."\n" ?>
+    area:   <?php echo (($i % 2)? 'Region-':'Area-').$i."\n" ?>    
+    street: <?php echo (($i % 2)? 'Street':'Road').' no. '.$i."\n" ?>
+    building: Apartment-<?php echo $i."\n" ?>
+    province_id: 13
+    district_id:  167 
+<?php endfor ?>
+
+OAddress:
+  2:
+    lid: 35
+    area:     Test
+    street:       Jl. Contoh Raya 17F
+    postal_code: 12620
+    province_id: 13
+    district_id:  168
+
+<?php for ($i = 111; $i <= 120; $i++): ?>
+  o_address_<?php echo $i ?>:
+    lid:    <?php echo $i."\n" ?>
+    area:   <?php echo (($i % 2)? 'Region-':'Area-').$i."\n" ?>
+    street: <?php echo (($i % 2)? 'Street':'Road').' no. '.$i."\n" ?>
+    province_id: 13
+    district_id:  167 
+<?php endfor ?>
+
+MAddress:
+  3:
+    lid: 2
+    area:     Cinere
+    province_id: 12
+    district_id:  146
+
+<?php for ($i = 121; $i <= 130; $i++): ?>
+  m_address_<?php echo $i ?>:
+    lid:    <?php echo $i."\n" ?>
+    area:   <?php echo (($i % 2)? 'Region-':'Area-').$i."\n" ?>
+    street: <?php echo (($i % 2)? 'Street':'Road').' no. '.$i."\n" ?>
+    province_id: 13
+    district_id:  167 
+<?php endfor ?>

@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Country
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          country
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Country Names
+        sort: [country_id, asc]
+        display: [=country]
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Country "<i>%%country%%</i>"
+      new:
+        title: New Country
+        
+      fields:
+        country_id:
+          label: ID
+

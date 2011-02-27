@@ -1,0 +1,144 @@
+Community:
+  1:
+    cid:           1
+    community:     Sipil (Regular)
+    brief:         S
+    department_id: 401
+    faculty_id:    4
+    program_id:    10
+  2:
+    cid:           2
+    community:     Mesin (Regular)
+    brief:         M
+    department_id: 402
+    faculty_id:    4
+    program_id:    10
+  3:
+    cid:           3
+    community:     Elektro (Regular)
+    brief:         E
+    department_id: 403
+    faculty_id:    4
+    program_id:    10
+  4:
+    cid:           4
+    community:     Metalurgi (Regular)
+    brief:         Mt
+    department_id: 404
+    faculty_id:    4
+    program_id:    10
+  5:
+    cid:           5
+    community:     Arsitek (Regular)
+    brief:         A
+    department_id: 405
+    faculty_id:    4
+    program_id:    10    
+  6:
+    cid:           6
+    community:     Kimia (Regular)
+    brief:         GP
+    department_id: 406
+    faculty_id:    4
+    program_id:    10 
+  7:
+    cid:           7
+    community:     Industri (Regular)
+    brief:         TI
+    department_id: 407
+    faculty_id:    4
+    program_id:    10
+  8:
+    cid:           8
+    community:     Perkapalan (Regular)
+    department_id: 408
+    faculty_id:    4
+    program_id:    10
+
+  21:
+    cid:           21
+    community:     Sipil (Ekstensi)
+    department_id: 401
+    faculty_id:    4
+    program_id:    11
+  22:
+    cid:           22
+    community:     Mesin (Ekstensi)
+    department_id: 402
+    faculty_id:    4
+    program_id:    11
+  23:
+    cid:           23
+    community:     Elektro (Ekstensi)
+    department_id: 403
+    faculty_id:    4
+    program_id:    11
+  26:
+    cid:           26
+    community:     Kimia (Ekstensi)
+    department_id: 406
+    faculty_id:    4
+    program_id:    11
+
+  41:
+    cid:           41
+    community:     Sipil (Magister)
+    department_id: 401
+    faculty_id:    4
+    program_id:    21
+  42:
+    cid:           42
+    community:     Mesin (Magister)
+    department_id: 402
+    faculty_id:    4
+    program_id:    21
+  44:
+    cid:           44
+    community:     Metalurgi (Magister)
+    department_id: 404
+    faculty_id:    4
+    program_id:    21
+  46:
+    cid:           46
+    community:     Kimia (Magister)
+    department_id: 406
+    faculty_id:    4
+    program_id:    21
+  47:
+    cid:           47
+    community:     Industri (Magister)
+    department_id: 407
+    faculty_id:    4
+    program_id:    21
+
+  61:
+    cid:           61
+    community:     Elektronika (S2)
+    department_id: 403
+    faculty_id:    4
+    program_id:    20
+  62:
+    cid:           62
+    community:     Optoelektronika (S2)
+    department_id: 403
+    faculty_id:    4
+    program_id:    20
+
+  81:
+    cid:           81
+    community:     Sipil (Doktor)
+    department_id: 401
+    faculty_id:    4
+    program_id:    30
+  82:
+    cid:           82
+    community:     Mesin (Doktor)
+    department_id: 402
+    faculty_id:    4
+    program_id:    30
+  83:
+    cid:           83
+    community:     Elektro (Doktor)
+    department_id: 403
+    faculty_id:    4
+    program_id:    30

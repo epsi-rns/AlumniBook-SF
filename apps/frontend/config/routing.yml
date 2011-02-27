@@ -1,0 +1,293 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  # param: { module: default, action: index }
+  param: { module: cover, action: index }
+  
+# sfGuard
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+# Basic Data
+main:
+  url:     /main/:action.:sf_format
+  param:   { module: cover, sf_format: html }
+  requirements:
+    sf_format: (?:html|atom)
+
+alumni_detail:
+  url:   /adet/:aid
+  param: { module: alumni, action: detail }
+  requirements: { sf_method: [get], aid: \d+ }
+  
+org_detail:
+  url:   /odet/:org_id
+  param: { module: org, action: detail }
+  requirements: { sf_method: [get], org_id: \d+ }  
+
+community_total:  
+  url:   /tocomy
+  param: { module: acommunities, action: total }
+  
+# Categories 
+compy_all_cat:  
+  url:   /compy
+  param: { module: acompetencies, action: category }
+  
+compy_by_cat:  
+  url:   /compy/:id
+  param: { module: acompetencies, action: filter }
+  requirements: { sf_method: [get], id: \d+ }
+
+field_all_cat:  
+  url:   /field
+  param: { module: ofields, action: category }
+  
+field_by_cat:  
+  url:   /field/:id
+  param: { module: ofields, action: filter }
+  requirements: { sf_method: [get], id: \d+ }
+  
+occup_all_cat:  
+  url:   /occup
+  param: { module: amap, action: category }
+  
+occup_by_cat:  
+  url:   /occup/:id
+  param: { module: amap, action: filter } 
+  requirements: { sf_method: [get], id: \d+ }
+  
+rank_all_cat:  
+  url:   /rank
+  param: { module: omap, action: category }
+  
+rank_by_cat:  
+  url:   /rank/:id
+  param: { module: omap, action: filter }  
+  requirements: { sf_method: [get], id: \d+ }
+  
+# sfDoctrineRouteCollectionMaster
+alumni:
+  class:   sfDoctrineRouteCollectionMaster
+  options: 
+    model: 		  Alumni
+    module:       alumni
+    prefix_path:  alumni
+    column:       aid
+    with_wildcard_routes: true
+  requirements: { aid: \d+ }  
+  
+org:
+  class:   sfDoctrineRouteCollectionMaster 
+  options: 
+    model: 		  Organization
+    module:       org
+    prefix_path:  org
+    column:       org_id
+    with_wildcard_routes: true
+  requirements: { org_id: \d+ }   
+  
+community:
+  class:   sfDoctrineRouteCollectionMaster 
+  options: 
+    model: 		  Community
+    module:       community
+    prefix_path:  community
+    column:       cid
+    with_wildcard_routes: true
+  requirements: { cid: \d+ }     
+
+# sfDoctrineRouteCollectionDetail
+# note: not applicable for acommunities due to dynamic url parameters
+
+acompetencies:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   ACompetencies
+    module:        acompetencies
+    prefix_path:   acompetencies
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+    
+acertifications:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   ACertifications
+    module:        acertifications
+    prefix_path:   acertifications
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+    
+    
+aexperiences:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   AExperiences
+    module:        aexperiences
+    prefix_path:   aexperiences
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+       
+
+adegrees:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   ADegrees
+    module:        adegrees
+    prefix_path:   adegrees
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+ 
+
+ofields:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   OFields
+    module:        ofields
+    prefix_path:   ofields
+    column:        did
+    column_parent: oid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+ 
+    
+residence:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   AAddress
+    module:        residence
+    prefix_path:   residence
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+  
+
+office:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   OAddress
+    module:        office
+    prefix_path:   office
+    column:        did
+    column_parent: oid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+    
+workplace:
+  class:   sfDoctrineRouteCollectionDetail
+  options: 
+    model: 		   MAddress
+    module:        workplace
+    prefix_path:   workplace
+    column:        did
+    column_parent: mid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+
+acontacts:
+  class:   sfDoctrineRouteCollectionDetail
+  options: 
+    model: 		   AContacts
+    module:        acontacts
+    prefix_path:   acontacts
+    column:        did
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+
+ocontacts:
+  class:   sfDoctrineRouteCollectionDetail
+  options: 
+    model: 		   OContacts
+    module:        ocontacts
+    prefix_path:   ocontacts
+    column:        did
+    column_parent: oid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+
+mcontacts:
+  class:   sfDoctrineRouteCollectionDetail
+  options: 
+    model: 		   MContacts
+    module:        mcontacts
+    prefix_path:   mcontacts
+    column:        did
+    column_parent: mid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+
+
+amap:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   AOMap
+    module:        amap
+    prefix_path:   amap
+    column:        mid
+    column_parent: aid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+     
+
+omap:
+  class:   sfDoctrineRouteCollectionDetail 
+  options: 
+    model: 		   AOMap
+    module:        omap
+    prefix_path:   omap
+    column:        mid
+    column_parent: oid
+    with_wildcard_routes: true
+  requirements: 
+    did: \d+  
+    
+# Fix Action
+
+amap_filter:
+  url:   /amapf
+  param: { module: amap, action: filter }
+
+omap_filter:
+  url:   /omapf
+  param: { module: omap, action: filter }
+
+  
+birth:
+  url:   /birth
+  param: { module: alumni, action: birth }
+     
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

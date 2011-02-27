@@ -1,0 +1,14 @@
+all:
+  metas: { title: Academic Degrees }
+
+showSuccess:
+  metas: { title: Academic Degree :: Show }
+
+newSuccess:
+  metas: { title: Academic Degree :: Add }
+
+editSuccess:
+  metas: { title: Academic Degree :: Update }
+
+listSuccess:
+  metas: { title: Academic Degrees by Alumna/us }

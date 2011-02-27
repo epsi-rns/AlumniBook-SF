@@ -1,0 +1,14 @@
+all:
+  metas: { title: Office Contacts }
+
+showSuccess:
+  metas: { title: Office Contact :: Show }
+
+newSuccess:
+  metas: { title: Office Contact :: Add }
+
+editSuccess:
+  metas: { title: Office Contact :: Update }
+
+listSuccess:
+  metas: { title: Office Contacts by Organization }

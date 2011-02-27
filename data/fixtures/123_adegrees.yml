@@ -1,0 +1,31 @@
+ADegrees:
+  Aswil:
+    aid: 283
+    strata_id:     10
+    admitted:      1974
+    graduated:     1980
+    degree:        Ir.
+    institution:   University of Indonesia
+    major:         Engineering
+    minor:         Electrical
+  Rizqi:
+    aid: 25
+    strata_id:     10
+    admitted:      1993
+    graduated:     1999
+    degree:        ST
+    institution:   University of Indonesia
+    major:         Engineering
+    minor:         Mechanical
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  anon_<?php echo $i ?>:
+    aid: <?php echo $i."\n" ?>
+    strata_id:     10
+    admitted:      <?php echo 1875+(round($i/5)*5)."\n" ?>
+    graduated:     <?php echo 1881+(round($i/5)*5)."\n" ?>
+    degree:        ST
+    institution:   University of Indonesia
+    major:         Faculty-<?php echo $i."\n" ?>
+    minor:         Department-<?php echo $i."\n" ?>
+<?php endfor ?>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfMooNoobSlidePlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>noobSlide for Mootools 1.2.</summary>
+ <description>There is two mode used in this plugin</description>
+ <lead>
+  <name>E.R. Nurwijayadi</name>
+  <user>epsi</user>
+  <email>epsi.rns@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-02-05</date>
+ <time>13:39:53</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="edad6487d8dc09ee39112dbe108eb56b" name="modules/sfMooNoobSlide/templates/_noob.php" role="data" />
+   <file md5sum="91cfa486638b2db5fa3303ec3c02a8c5" name="config/sfMooNoobSlidePluginConfiguration.class.php" role="data" />
+   <file md5sum="6474f38fa4ca10c6013d2bb435fbabbf" name="web/css/noob.css" role="data" />
+   <file md5sum="64df07f472a88d5d3f924963dd36454c" name="web/css/spinner.css" role="data" />
+   <file md5sum="396f65cc1abe7e4e8b7178897a8c823f" name="web/js/mooclass.noobSlide.js" role="data" />
+   <file md5sum="a8723576b1219f23e0757d915926da9a" name="web/js/mooclass.noobSlide.packed.js" role="data" />
+   <file md5sum="df2c9588d3ec64d11dd0475f0e72899c" name="web/js/moohelper.noob.js" role="data" />
+   <file md5sum="3619e8cb3b884e5143b0d971fc6e10c2" name="web/js/mooclass.reflection.js" role="data" />
+   <file md5sum="73fee991c047bb49547834c2c57f40ed" name="web/js/mooclass.gpw.js" role="data" />
+   <file md5sum="0ac321c65470aaf896bc1876311feac1" name="web/images/go-up.png" role="data" />
+   <file md5sum="01fa0d3883e00b914cc36bc8bf0b2b98" name="web/images/go-down.png" role="data" />
+   <file md5sum="4b3afb84b2b71ef56df09997a350bd04" name="web/images/spinner.gif" role="data" />
+   <file md5sum="9735cfde96efc6057b7e92f73364f7f4" name="lib/helper/sfMooNoobSlideHelper.php" role="data" />
+   <file md5sum="9fad7d160c0fffd2cf860456ca93dc4c" name="README" role="data" />
+   <file md5sum="c1956d2063ad05d0ada6aeae1209ccb3" name="LICENSE" role="data" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.4</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.3.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog />
+</package>

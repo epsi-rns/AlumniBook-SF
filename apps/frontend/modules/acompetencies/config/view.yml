@@ -1,0 +1,20 @@
+all:
+  metas: { title: Competencies }
+
+showSuccess:
+  metas: { title: Competency :: Show }
+
+newSuccess:
+  metas: { title: Competency :: Add }
+
+editSuccess:
+  metas: { title: Competency :: Update }
+
+categorySuccess:
+  metas: { title: Competency by Categories }
+  
+filterSuccess:
+  metas: { title: Competencies :: Filtered }
+
+listSuccess:
+  metas: { title: Competencies by Alumna/us }

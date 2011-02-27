@@ -1,0 +1,14 @@
+all:
+  metas: { title: Certifications }
+
+showSuccess:
+  metas: { title: Certification :: Show }
+
+newSuccess:
+  metas: { title: Certification :: Add }
+
+editSuccess:
+  metas: { title: Certification :: Update }
+
+listSuccess:
+  metas: { title: Certifications by Alumna/us }

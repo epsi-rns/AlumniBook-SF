@@ -1,0 +1,33 @@
+/* http://davidwalsh.name/scroll-sidebar */
+
+#dw-sidebar-menu { 
+	display:none; width:48px; 
+	background:#333; border:1px solid #000; padding:10px; 
+	-webkit-border-radius:10px; -moz-border-radius:10px; 
+}
+
+#dw-sidebar-menu ul { 
+	padding:0; list-style-type:none; 
+}
+
+#dw-sidebar-menu a	{ 
+	color:#fff; display:block; 
+	height:48px; width:48px; 
+	text-indent:-3000px; overflow:hidden; 
+}
+
+#dw-sidebar-menu-top {
+	background:url(../images/menu-up-lime.png) center center no-repeat;
+}
+
+#dw-sidebar-menu-home {
+	background:url(../images/openclipart-home10.png) center center no-repeat;
+}
+
+#dw-sidebar-menu-twitter {
+	background:url(../images/openclipart-tweet_birs.png) center center no-repeat;
+}
+
+#dw-sidebar-menu-bottom {
+	background:url(../images/menu-down-lime.png) center center no-repeat;
+}

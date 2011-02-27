@@ -1,0 +1,20 @@
+all:
+  metas: { title: Maps (org) }
+
+showSuccess:
+  metas: { title: Map (org) :: Show }
+
+newSuccess:
+  metas: { title: Map (org) :: Add }
+
+editSuccess:
+  metas: { title: Map (org) :: Update }
+
+categorySuccess:
+  metas: { title: Job Position by Categories }
+  
+filterSuccess:
+  metas: { title: Job Positions :: Filtered }
+
+listSuccess:
+  metas: { title: Job Positions by Organization }

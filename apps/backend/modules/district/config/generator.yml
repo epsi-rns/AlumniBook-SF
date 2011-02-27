@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           District
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          district
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendDistrict
+        title: Manage District/ City Names
+        sort: [district_id, asc]
+        display: [=district, province]  
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing District/ City "<i>%%district%%</i>"
+      new:
+        title: New District/ City
+        
+      fields:
+        district:
+          label: District/ City
+        district_id:
+          label: ID

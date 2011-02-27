@@ -1,0 +1,32 @@
+ACommunities:
+  Rizqi:
+    aid: 25
+    cid: 2
+    class_year: 1993
+  Aswil:
+    aid: 283
+    cid: 3
+    class_year: 1974
+  Desi:
+    aid: 3
+    cid: 3
+    class_year: 1993
+  Idris:
+    aid: 4
+    cid: 8
+    class_year: 2002
+  Jos:
+    aid: 5
+    cid: 2
+    class_year: 1993
+  Desi Lagi:
+    aid: 3
+    cid: 47
+    class_year: 2008
+ 
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  anon_<?php echo $i ?>:
+    aid: <?php echo $i."\n" ?>
+    cid: <?php echo (($i % 8) + 1)."\n" ?>
+    class_year: <?php echo 1875+(round($i/5)*5)."\n" ?>
+<?php endfor ?>

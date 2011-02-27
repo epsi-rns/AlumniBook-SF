@@ -1,0 +1,16 @@
+all:
+  metas: { title: Home Addresses }
+
+showSuccess:
+  metas: { title: Home Address :: Show }
+
+newSuccess:
+  metas: { title: Home Address :: Add }
+  javascripts: [moo/request.js]
+  
+editSuccess:
+  metas: { title: Home Address :: Update }
+  javascripts: [moo/request.js]
+  
+listSuccess:
+  metas: { title: Home Addresses by Alumna/us }

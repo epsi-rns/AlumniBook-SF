@@ -1,0 +1,64 @@
+alumni:
+  rizqi:
+    aid: 25
+    name:   Epsiarto Rizqi Nurwijayadi
+    suffix: ST
+    note:   Periksa ulang nama pengguna ini!
+    gender:	M
+    birthplace:	 Sungai Gerong
+    birthdate:	 '1975-11-04'
+    religion_id: 1
+    created_at:  '<?php echo ( date('Y-m-d', time()-10*86400) );?>'
+  aswil:
+    aid: 283
+    name:   Aswil Nazir
+    prefix: Ir.
+    gender:	M
+    birthplace:	 Jakarta
+    birthdate:	 '1955-08-1'
+    religion_id: 1
+    created_at:  '<?php echo ( date('Y-m-d', time()-30*86400) );?>'
+  desi: 
+    aid: 3
+    name:   Desrinda Syahfarin
+    suffix: ST, MSc.
+    gender:	F
+    religion_id: 1
+  idris:
+    aid: 4
+    name:   Idris Hadi Sikumbang
+    suffix: ST, MSc.
+    gender:	M
+    religion_id: 1
+  jos:
+    aid: 5
+    name:   Jos Istiyanto
+    suffix: ST
+    gender:	M
+    religion_id: 1
+    birthplace:	 Pemalang
+    birthdate:	 '1975-01-27'
+    created_at:  '<?php echo ( date('Y-m-d', time()-75*86400) );?>'
+        
+  john_doe:
+    aid: 50
+    name:   John Doe
+    gender:	M
+    note:   Additional test
+  jane_doe:
+    aid: 51
+    name:   Jane Doe
+    gender:	F
+    note:   Additional test
+        
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  anon_<?php echo $i ?>:
+    aid:       <?php echo $i."\n" ?>
+    name:      Anonymous Coward <?php echo $i."\n" ?>
+    prefix:    <?php echo (($i % 2) ? 'Mr.' : 'Ms.')."\n" ?>
+    suffix:    STMJ    
+    gender:    <?php echo (($i % 2) ? 'M' : 'F')."\n" ?>
+    birthdate: <?php echo "'".(1855+$i).'-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+    created_at:  '2010-06-01'
+    updated_at:  <?php echo "'".'2010-'.(($i % 12)+1).'-'.(($i % 30)+1)."'\n" ?>
+<?php endfor ?>

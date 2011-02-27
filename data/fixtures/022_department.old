@@ -1,0 +1,428 @@
+Department:
+  401:
+    faculty_id:     4
+    department_id:  401
+    department:     Teknik Sipil
+  402:
+    faculty_id:     4
+    department_id:  402
+    department:     Teknik Mesin
+  403:
+    faculty_id:     4
+    department_id:  403
+    department:     Teknik Elektro
+  404:
+    faculty_id:     4
+    department_id:  404
+    department:     Teknik Metalurgi dan Material
+  405:
+    faculty_id:     4
+    department_id:  405
+    department:     Arsitek
+  406:
+    faculty_id:     4
+    department_id:  406
+    department:     Teknik Gas dan Petrokimia
+  407:
+    faculty_id:     4
+    department_id:  407
+    department:     Teknik Industri
+  408:
+    faculty_id:     4
+    department_id:  408
+    department:     Teknik Perkapalan
+
+  101:
+    faculty_id:     1
+    department_id:  101
+    department:     Kedokteran Umum
+  102:
+    faculty_id:     1
+    department_id:  102
+    department:     Ilmu Biologi
+  103:
+    faculty_id:     1
+    department_id:  103
+    department:     Fisika Medis
+  104:
+    faculty_id:     1
+    department_id:  104
+    department:     Kimia Kedokteran
+  105:
+    faculty_id:     1
+    department_id:  105
+    department:     Anatomik
+  106:
+    faculty_id:     1
+    department_id:  106
+    department:     Histologi
+  107:
+    faculty_id:     1
+    department_id:  107
+    department:     Ilmu Faal
+  108:
+    faculty_id:     1
+    department_id:  108
+    department:     Biokimia
+  109:
+    faculty_id:     1
+    department_id:  109
+    department:     Patologi
+  110:
+    faculty_id:     1
+    department_id:  110
+    department:     Patologi Klinik
+  111:
+    faculty_id:     1
+    department_id:  111
+    department:     Mikrobiologi Kedokteran
+  112:
+    faculty_id:     1
+    department_id:  112
+    department:     Parasitologi
+  113:
+    faculty_id:     1
+    department_id:  113
+    department:     Farmacologi
+  114:
+    faculty_id:     1
+    department_id:  114
+    department:     Kedokteran Komunitas
+  115:
+    faculty_id:     1
+    department_id:  115
+    department:     Penyakit Dalam
+  116:
+    faculty_id:     1
+    department_id:  116
+    department:     Bedah
+  117:
+    faculty_id:     1
+    department_id:  117
+    department:     Obstetri dan Ginekologi
+  118:
+    faculty_id:     1
+    department_id:  118
+    department:     Kesehatan Anak
+  119:
+    faculty_id:     1
+    department_id:  119
+    department:     Penyakit Syaraf
+  120:
+    faculty_id:     1
+    department_id:  120
+    department:     Kedokteran Jiwa
+  121:
+    faculty_id:     1
+    department_id:  121
+    department:     Ilmu Penyakit THT
+  123:
+    faculty_id:     1
+    department_id:  123
+    department:     Ilmu Penyakit Mata
+  124:
+    faculty_id:     1
+    department_id:  124
+    department:     Kardiologi
+  125:
+    faculty_id:     1
+    department_id:  125
+    department:     Radiologi
+  126:
+    faculty_id:     1
+    department_id:  126
+    department:     Dermatologi
+  127:
+    faculty_id:     1
+    department_id:  127
+    department:     Anestesiologi
+  128:
+    faculty_id:     1
+    department_id:  128
+    department:     Pulmonologi
+  129:
+    faculty_id:     1
+    department_id:  129
+    department:     Kedokteran Forensik
+  130:
+    faculty_id:     1
+    department_id:  130
+    department:     Ilmu Penyakit Gigi dan Mulut
+  131:
+    faculty_id:     1
+    department_id:  131
+    department:     Bedah Syaraf
+
+  202:
+    faculty_id:     2
+    department_id:  202
+    department:     Bedah Mulut
+  203:
+    faculty_id:     2
+    department_id:  203
+    department:     Kesehatan Gigi Anak
+  204:
+    faculty_id:     2
+    department_id:  204
+    department:     Kesehatan Gigi Masyarakat dan Pencegahan
+  205:
+    faculty_id:     2
+    department_id:  205
+    department:     Orthodonsia
+  206:
+    faculty_id:     2
+    department_id:  206
+    department:     Konservasi Gigi
+  207:
+    faculty_id:     2
+    department_id:  207
+    department:     Penyakit Mulut
+  208:
+    faculty_id:     2
+    department_id:  208
+    department:     Periodonsia
+
+  301:
+    faculty_id:     3
+    department_id:  301
+    department:     Matematika
+  302:
+    faculty_id:     3
+    department_id:  302
+    department:     Fisika
+  303:
+    faculty_id:     3
+    department_id:  303
+    department:     Kimia
+  304:
+    faculty_id:     3
+    department_id:  304
+    department:     Biologi
+  305:
+    faculty_id:     3
+    department_id:  305
+    department:     Farmasi
+  306:
+    faculty_id:     3
+    department_id:  306
+    department:     Geografi
+
+  501:
+    faculty_id:     5
+    department_id:  501
+    department:     Ilmu Hukum Dasar
+  502:
+    faculty_id:     5
+    department_id:  502
+    department:     Hukum Keperdataan
+  503:
+    faculty_id:     5
+    department_id:  503
+    department:     Hukum Pidana
+  504:
+    faculty_id:     5
+    department_id:  504
+    department:     Hukum Tata Negara
+  505:
+    faculty_id:     5
+    department_id:  505
+    department:     Hukum Administrasi Negara
+  506:
+    faculty_id:     5
+    department_id:  506
+    department:     Hukum Internasional
+  507:
+    faculty_id:     5
+    department_id:  507
+    department:     Hukum dan Masyarakat
+  508:
+    faculty_id:     5
+    department_id:  508
+    department:     Ilmu Hukum Acara
+
+  601:
+    faculty_id:     6
+    department_id:  601
+    department:     Ekonomi dan Studi Pembangunan
+  602:
+    faculty_id:     6
+    department_id:  602
+    department:     Akuntansi 
+  603:
+    faculty_id:     6
+    department_id:  603
+    department:     Manajemen
+
+  701:
+    faculty_id:     7
+    department_id:  701
+    department:     Departemen Arkeologi
+  702:
+    faculty_id:     7
+    department_id:  702
+    department:     Sejarah
+  703:
+    faculty_id:     7
+    department_id:  703
+    department:     Studi Cina
+  704:
+    faculty_id:     7
+    department_id:  704
+    department:     Studi Jepang
+  705:
+    faculty_id:     7
+    department_id:  705
+    department:     Sastra Daerah/Jawa
+  706:
+    faculty_id:     7
+    department_id:  706
+    department:     Filsafat
+  707:
+    faculty_id:     7
+    department_id:  707
+    department:     Studi Jerman
+  708:
+    faculty_id:     7
+    department_id:  708
+    department:     Studi Inggris
+  709:
+    faculty_id:     7
+    department_id:  709
+    department:     Studi Perancis
+  710:
+    faculty_id:     7
+    department_id:  710
+    department:     Studi Asia Timur
+  711:
+    faculty_id:     7
+    department_id:  711
+    department:     Sastra Slavia
+  712:
+    faculty_id:     7
+    department_id:  712
+    department:     Ilmu Perpustakaan
+  713:
+    faculty_id:     7
+    department_id:  713
+    department:     Linguistik
+  714:
+    faculty_id:     7
+    department_id:  714
+    department:     Kesusasteraan
+
+  802:
+    faculty_id:     8
+    department_id:  802
+    department:     Departemen Psikologi Industri Organisasi
+  803:
+    faculty_id:     8
+    department_id:  803
+    department:     Psikologi Klinis
+  804:
+    faculty_id:     8
+    department_id:  804
+    department:     Psikologi Perkembangan
+  805:
+    faculty_id:     8
+    department_id:  805
+    department:     Psikologi Pendidikan
+  806:
+    faculty_id:     8
+    department_id:  806
+    department:     Psikologi Sosial
+  807:
+    faculty_id:     8
+    department_id:  807
+    department:     Psikologi Umum dan Eksperimen
+
+  902:
+    faculty_id:     9
+    department_id:  902
+    department:     Departemen Antropologi
+  903:
+    faculty_id:     9
+    department_id:  903
+    department:     Ilmu Administrasi
+  904:
+    faculty_id:     9
+    department_id:  904
+    department:     Hubungan Internasional
+  905:
+    faculty_id:     9
+    department_id:  905
+    department:     Ilmu Komunikasi
+  906:
+    faculty_id:     9
+    department_id:  906
+    department:     Kesejahteraan Sosial
+  907:
+    faculty_id:     9
+    department_id:  907
+    department:     Kriminologi
+  908:
+    faculty_id:     9
+    department_id:  908
+    department:     Ilmu Politik
+  909:
+    faculty_id:     9
+    department_id:  909
+    department:     Sosiologi
+
+  1002:
+    faculty_id:     10
+    department_id:  1002
+    department:     Administrasi Kebijakan Kesehatan
+  1003:
+    faculty_id:     10
+    department_id:  1003
+    department:     Studi Kebijakan
+  1004:
+    faculty_id:     10
+    department_id:  1004
+    department:     Epidemiologi
+  1005:
+    faculty_id:     10
+    department_id:  1005
+    department:     Gizi dan Kesehatan Masyarakat
+  1006:
+    faculty_id:     10
+    department_id:  1006
+    department:     Ilmu Kependudukan dan Biostatistik
+  1007:
+    faculty_id:     10
+    department_id:  1007
+    department:     Kesehatan Lingkungan
+  1008:
+    faculty_id:     10
+    department_id:  1008
+    department:     Pendidikan Kesehatan dan Ilmu Perilaku
+
+  1101:
+    faculty_id:     11
+    department_id:  1101
+    department:     Dasar Keperawatan dan Keperawatan Dasar
+  1102:
+    faculty_id:     11
+    department_id:  1102
+    department:     Keperawatan Medikal Bedah
+  1103:
+    faculty_id:     11
+    department_id:  1103
+    department:     Keperawatan Anak
+  1104:
+    faculty_id:     11
+    department_id:  1104
+    department:     Keperawatan Maternitas
+  1105:
+    faculty_id:     11
+    department_id:  1105
+    department:     Keperawatan Jiwa
+  1106:
+    faculty_id:     11
+    department_id:  1106
+    department:     Keperawatan Komunitas
+
+  1201:
+    faculty_id:     12
+    department_id:  1201
+    department:     Ilmu Komputer

@@ -1,0 +1,18 @@
+all:
+  metas: { title: Communities }
+
+showSuccess:
+  metas: { title: Community :: Show }
+
+newSuccess:
+  metas: { title: Community :: Add }
+
+editSuccess:
+  metas: { title: Community :: Update }
+
+listSuccess:
+  metas: { title: Communities by Alumna/us }
+  
+totalSuccess:
+  metas: { title: Summary of Communities }  
+  stylesheets: [bars.css]

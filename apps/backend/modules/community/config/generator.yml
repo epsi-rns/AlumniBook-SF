@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Community
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          community
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendCommunity
+        title: Manage Campus Communities
+        sort: [cid, asc]
+        display: [=community, brief, department, faculty, program]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Campus Community "<i>%%community%%</i>"
+      new:
+        title: New Campus Community
+
+
+      fields:
+        community:
+          help: This should be named manually
+        brief:
+          help: Abbreviation or short name for this community in your culture
+        faculty_id:
+          help: Select faculty this community linked to
+        department_id:
+          help: Select department this community linked to
+        program_id:
+          help: Select program this community linked to

@@ -1,0 +1,25 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_guard_plugin:
+    remember_cookie_name:   alumniBookRememberMe
+
+  max_pagination: 20
+
+  oriclone:
+    layout:  
+      sitename: AlumniBook
+      logo:     logo-orikara
+      blocks:
+        # try to change to right
+        left: common/block_menu
+        top:  common/block_top
+        page_top:  common/block_page_top
+        index_bottom: common/block_login_guidance
+        main_bottom:  common/block_moo_sidebar_menu
+        
+      classes:
+        # just black, no gradient
+        variation_top:     ""

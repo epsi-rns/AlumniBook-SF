@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           JobPosition
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          job_position
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Rank (Job Position) Categories
+        sort: [job_position_id, asc]
+        display: [=job_position]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Rank (Job Position) Category "<i>%%job_position%%</i>"
+      new:
+        title: New Rank (Job Position) Category
+        
+      fields:
+        job_position:
+          label: Rank
+        job_position_id:
+          label: ID

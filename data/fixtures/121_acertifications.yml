@@ -1,0 +1,11 @@
+acertifications:
+  Rizqi:
+    aid: 25
+    certification: Test-Sertifikasi
+    institution:   Test-Institusi
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  anon_<?php echo $i ?>:
+    aid: <?php echo $i."\n" ?>
+    certification: Ahli-<?php echo $i."\n" ?>
+    institution:   Lembaga-Kursus-<?php echo $i."\n" ?>
+<?php endfor ?>

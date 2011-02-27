@@ -1,0 +1,21 @@
+all:
+  metas: { title: Business Fields }
+
+showSuccess:
+  metas: { title: Business Field :: Show }
+
+newSuccess:
+  metas: { title: Business Field :: Add }
+
+editSuccess:
+  metas: { title: Business Field :: Update }
+  
+categorySuccess:
+  metas: { title: Business Field by Categories }
+  
+filterSuccess:
+  metas: { title: Business Fields :: Filtered }
+
+listSuccess:
+  metas: { title: Business Fields by Organization }
+

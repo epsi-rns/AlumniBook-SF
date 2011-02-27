@@ -1,0 +1,19 @@
+all:
+  metas: { title: Alumni }
+
+showSuccess:
+  metas: { title: Alumna/us :: Show }
+
+newSuccess:
+  metas: { title: Alumna/us :: Add }
+
+editSuccess:
+  metas: { title: Alumna/us :: Update }
+
+detailSuccess:
+  metas: { title: Alumna/us :: Detail }
+  stylesheets: []
+  javascripts: [moo/request.js]
+
+birthSuccess:
+  metas: { title: Alumni's Birthdays }

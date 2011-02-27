@@ -1,0 +1,16 @@
+all:
+  metas: { title: Job Addresses }
+
+showSuccess:
+  metas: { title: Job Address :: Show }
+
+newSuccess:
+  metas: { title: Job Address :: Add }
+  javascripts: [moo/request.js]
+  
+editSuccess:
+  metas: { title: Job Address :: Update }
+  javascripts: [moo/request.js]
+  
+listSuccess:
+  metas: { title: Job Addresses by Map }

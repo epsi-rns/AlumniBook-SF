@@ -1,0 +1,7 @@
+all:
+  mootools_plugin_path: /sfMootoolsPlugin/js
+    
+  # Note: you can use external script like 
+  # http://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js
+  mootools_core: mootools-core-1.3-full-nocompat-yc.js
+  mootools_more: mootools-more-1.3-yc.js

@@ -1,0 +1,40 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Administrator
+    last_name:      Root
+    email_address:  admin@iluni.org
+    username:       admin
+    password:       admin
+    is_super_admin: true
+    Groups:         [Group_admin]
+  User_editor:
+    first_name:     Data
+    last_name:      Entry
+    email_address:  editor@iluni.org
+    username:       editor
+    password:       editor
+    Groups:         [Group_editor]    
+  User_demo:
+    first_name:     Demo Site
+    last_name:      Guest
+    email_address:  guest@iluni.org
+    username:       guest
+    password:       guest
+    
+sfGuardGroup:
+  Group_admin:
+    name:           admin
+    description:    Administrator group
+    Permissions:    [Permission_admin, Permission_editor]
+  Group_editor:
+    name:           editor
+    description:    Editor group
+    Permissions:    [Permission_editor]
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin
+    description:    Administrator permission
+  Permission_editor:
+    name:           editor
+    description:    Editor permission

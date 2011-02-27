@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Strata
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          strata
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Stratum Categories
+        sort: [strata_id, asc]
+        display: [=strata]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Stratum) Category "<i>%%strata%%</i>"
+      new:
+        title: New Stratum Category
+        
+      fields:
+        strata:
+          label: Strata
+          help: Educational Level of Achievement, or Degree 
+        strata_id:
+          label: ID

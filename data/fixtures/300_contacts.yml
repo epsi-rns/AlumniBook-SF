@@ -1,0 +1,59 @@
+<?php 
+  $ctid = array(3,4,6,8,9); 
+
+  function getContact($id, $i)
+  {
+      switch ($id) {
+        case 3: $contact = '081xy-0'.$i.'-0'.$i; break;
+        case 4: $contact = '021xy-'.$i.'-0'.$i; break;
+        case 5: $contact = '021xy-0'.$i.'-'.$i; break;
+        case 8: $contact = 'fake.'.$i.'@demo.iluni.org'; break;
+        case 9: $contact = 'user'.$i.'.iluni-ftui.org'; break;
+        default: $contact = 'test-'.$i;
+      }
+      return $contact;
+  }
+?>
+
+AContacts:
+  10:
+    lid: 25
+    ct_id: 9
+    contact: iluni.org
+  11:
+    lid: 25
+    ct_id: 8
+    contact: epsi.rns [at] gmail.com
+
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  a_contact_<?php echo $i ?>:
+    lid: <?php echo $i."\n" ?>
+    ct_id: <?php echo ($id = $ctid[$i % 5])."\n" ?>
+    contact: <?php echo getContact($id, $i)."\n" ?>
+<?php endfor ?>
+
+OContacts:
+  20:
+    lid: 35
+    ct_id: 4
+    contact: 021-1313-test
+
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  o_contact_<?php echo $i ?>:
+    lid: <?php echo $i."\n" ?>
+    ct_id: <?php echo ($id = $ctid[$i % 5])."\n" ?>
+    contact: <?php echo getContact($id, $i)."\n" ?>
+<?php endfor ?>
+
+MContacts:
+  30:
+    lid: 2
+    ct_id: 4
+    contact: 021-1313-coba
+
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  m_contact_<?php echo $i ?>:
+    lid: <?php echo $i."\n" ?>
+    ct_id: <?php echo ($id = $ctid[$i % 5])."\n" ?>
+    contact: <?php echo getContact($id, $i)."\n" ?>
+<?php endfor ?>

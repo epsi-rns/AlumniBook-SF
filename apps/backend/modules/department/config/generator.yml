@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Department
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          department
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendDepartment
+        title: Manage Departments
+        sort: [department_id, asc]
+        display: [=department, faculty]
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Department "<i>%%department%%</i>"
+      new:
+        title: New Department
+
+      fields:
+        department:
+          help: A department name
+        faculty_id:
+          help: Select faculty where the department belong to

@@ -1,0 +1,20 @@
+all:
+  metas: { title: Maps (alumni) }
+
+showSuccess:
+  metas: { title: Map (alumni) :: Show }
+
+newSuccess:
+  metas: { title: Map (alumni) :: Add }
+
+editSuccess:
+  metas: { title: Map (alumni) :: Update }
+
+categorySuccess:
+  metas: { title: Occupation by Categories }
+  
+filterSuccess:
+  metas: { title: Occupations :: Filtered }
+
+listSuccess:
+  metas: { title: Occupations by Alumna/us }

@@ -1,0 +1,17 @@
+OFields:
+  CJA:
+    org_id:   25
+    biz_field_id: 3
+  Ikan Lele:
+    org_id:   35
+    biz_field_id: 4
+    description: test keterangan
+  Dexa Medica:
+    org_id:   283
+    biz_field_id: 2
+<?php for ($i = 101; $i <= 130; $i++): ?>
+  field_<?php echo $i ?>:
+    org_id: <?php echo $i."\n" ?>
+    biz_field_id: <?php echo (($i % 25) + 1)."\n" ?>  
+    description: Keterangan-<?php echo $i."\n" ?>
+<?php endfor ?>

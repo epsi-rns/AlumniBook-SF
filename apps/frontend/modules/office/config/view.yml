@@ -1,0 +1,16 @@
+all:
+  metas: { title: Office Addresses }
+
+showSuccess:
+  metas: { title: Office Address :: Show }
+
+newSuccess:
+  metas: { title: Office Address :: Add }
+  javascripts: [moo/request.js]
+  
+editSuccess:
+  metas: { title: Office Address :: Update }
+  javascripts: [moo/request.js]
+  
+listSuccess:
+  metas: { title: Office Addresses by Organization }

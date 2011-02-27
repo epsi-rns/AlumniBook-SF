@@ -1,0 +1,155 @@
+district:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                District
+    module:               district
+    prefix_path:          /district
+    column:               district_id
+    with_wildcard_routes: true
+
+province:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Province
+    module:               province
+    prefix_path:          /province
+    column:               province_id
+    with_wildcard_routes: true
+
+country:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Country
+    module:               country
+    prefix_path:          /country
+    column:               country_id
+    with_wildcard_routes: true
+
+strata:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Strata
+    module:               strata
+    prefix_path:          /strata
+    column:               strata_id
+    with_wildcard_routes: true
+
+field:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                BizField
+    module:               field
+    prefix_path:          /field
+    column:               biz_field_id
+    with_wildcard_routes: true
+
+job_position:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                JobPosition
+    module:               jobposition
+    prefix_path:          /jobposition
+    column:               job_position_id
+    with_wildcard_routes: true
+
+job_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                JobType
+    module:               jobtype
+    prefix_path:          /jobtype
+    column:               job_type_id
+    with_wildcard_routes: true
+
+competency:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Competency
+    module:               competency
+    prefix_path:          /competency
+    column:               competency_id
+    with_wildcard_routes: true
+
+contact_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ContactType
+    module:               contacttype
+    prefix_path:          /contacttype
+    column:               ct_id
+    with_wildcard_routes: true
+
+community:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Community
+    module:               community
+    prefix_path:          /community
+    column:               cid
+    with_wildcard_routes: true
+
+faculty:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Faculty
+    module:               faculty
+    prefix_path:          /faculty
+    column:               faculty_id
+    with_wildcard_routes: true
+
+department:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Department
+    module:               department
+    prefix_path:          /department
+    column:               department_id
+    with_wildcard_routes: true
+
+religion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Religion
+    module:               religion
+    prefix_path:          /religion
+    column:               religion_id
+    with_wildcard_routes: true
+
+program:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Program
+    module:               program
+    prefix_path:          /program
+    column:               program_id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: community, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

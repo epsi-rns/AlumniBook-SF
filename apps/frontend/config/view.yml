@@ -1,0 +1,26 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+    # cache-control: public    
+
+  metas:
+    title: AlumniBook - Our simple data entry for alumni
+    description:  Official Demo of AlumniBook
+    keywords:     Symfony, AlumniBook, Alumni, Book, Alumni, Data Entry, Information System
+    # If you wanna fake it
+    generator:    Karimata 1.2.3 Media Engine
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:
+    - clipart.css
+    - silk.css
+
+  javascripts:
+    - moo/request.js
+
+  has_layout:     true
+  layout:         layout

@@ -1,0 +1,16 @@
+all:
+  metas: { title: Organizations }
+
+showSuccess:
+  metas: { title: Organization :: Show }
+
+newSuccess:
+  metas: { title: Organization :: Add }
+
+editSuccess:
+  metas: { title: Organization :: Update }
+
+detailSuccess:
+  metas: { title: Organizations :: Detail }
+  stylesheets: []
+  javascripts: [moo/request.js]

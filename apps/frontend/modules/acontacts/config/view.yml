@@ -1,0 +1,14 @@
+all:
+  metas: { title: Personal Contacts }
+
+showSuccess:
+  metas: { title: Personal Contact :: Show }
+
+newSuccess:
+  metas: { title: Personal Contact :: Add }
+
+editSuccess:
+  metas: { title: Personal Contact :: Update }
+
+listSuccess:
+  metas: { title: Personal Contacts by Alumna/us }

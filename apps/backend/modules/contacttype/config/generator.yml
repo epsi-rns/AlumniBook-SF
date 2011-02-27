@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ContactType
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contact_type
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Manage Contact Type
+        display: [ct_id, =contact_type]
+        batch_actions: {}        
+      filter:  ~
+      form:    ~
+      edit:
+        title: Editing Contact Type "<i>%%contact_type%%</i>"
+      new:
+        title: New Contact Type
+
+      fields:
+        ct_id:
+          label: ID
+        contact_type:
+          label: Type
+          help: Contact Type

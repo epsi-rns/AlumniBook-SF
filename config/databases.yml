@@ -1,0 +1,18 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+#    param:
+#      dsn: 'sqlite:////home/epsi/update/AlumniBook.sqlite?mode=0666'
+ 
+#-- deprecated firebird   
+#      dsn: 'firebird://SYSDBA:masterkey@localhost/home/epsi/update/AlumniBook.fdb'
+#      dsn: 'firebird:dbname=localhost:/home/epsi/update/AlumniBook.fdb'
+#      username: SYSDBA
+#      password: masterkey
+
+
+#-- mysql
+    param:
+      dsn: 'mysql:host=localhost;dbname=sf_alumni'
+      username: root
+      password: 

@@ -1,0 +1,7 @@
+list:   { credentials: editor }
+show:   { credentials: editor }
+edit:   { credentials: editor }
+new:    { credentials: editor }
+create: { credentials: editor }
+update: { credentials: editor }
+delete: { credentials: editor }

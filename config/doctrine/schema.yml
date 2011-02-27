@@ -1,0 +1,369 @@
+# options: { type: MyISAM }
+
+#--- Section: Person
+
+Alumni:
+  actAs: { Timestampable: ~ }
+  columns:
+    aid:    { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    name:   { type: string(50), notnull: true, unique: true }
+    prefix: { type: string(15) }
+    suffix: { type: string(15) }
+    note:	{ type: clob(65535) }
+    # regexp: '/^[?|M|F]$/'
+    gender:	{ type: char(1) } 
+    birthplace:	 { type: string(15) }
+    birthdate:	 { type: date, past: true }
+    religion_id: { type: integer(1) }
+    # Calculated field
+    fullname:    { type: string(80) }
+  relations:
+    Religion: { onDelete: SET NULL, local: religion_id, foreign: religion_id, foreignAlias: Religion }
+    ACommunities: { type: many, foreignType: one, local: aid, foreign: aid, foreignAlias: ACommunities }
+    ACompetencies: { type: many, foreignType: one, local: aid, foreign: aid, foreignAlias: ACompetencies }
+    ACertifications: { type: many, foreignType: one, local: aid, foreign: aid, foreignAlias: ACertifications }
+  # attributes: { validate: true }
+    
+Religion:
+  columns:
+    religion_id: { type: integer(1), notnull: true, primary: true, autoincrement: true }
+    religion:    { type: string(20), notnull: true, unique: true }
+  relations:
+    Alumni: { type: many, foreignType: one, local: religion_id, foreign: religion_id, foreignAlias: Alumni }
+#--- Section: Community
+
+Program:
+  actAs: 
+    I18n: { fields: [program] }
+  columns:
+    program_id: { type: integer(2), notnull: true, primary: true, autoincrement: true }
+    program: { type: string(20), notnull: true, unique: true }
+  relations:
+    Community: { type: many, foreignType: one, local: program_id, foreign: program_id, foreignAlias: Community }
+
+Faculty:
+  actAs: 
+    I18n: { fields: [faculty] }
+  columns:
+    faculty_id: { type: integer(2), notnull: true, primary: true, autoincrement: true }
+    faculty:    { type: string(35), notnull: true, unique: true }    
+  relations:
+    Department: { type: many, foreignType: one, local: faculty_id, foreign: faculty_id, foreignAlias: Department }
+    Community: { type: many, foreignType: one, local: faculty_id, foreign: faculty_id, foreignAlias: Community }
+
+Department:
+  actAs: 
+    I18n: { fields: [department] }
+  columns:
+    department_id: { type: integer(2), notnull: true, primary: true, autoincrement: true }
+    department:    { type: string(40), notnull: true, unique: true }
+    faculty_id:    { type: integer(2) }
+  relations:
+    Faculty: { local: faculty_id, foreign: faculty_id, foreignAlias: Faculty }
+    Community: { type: many, foreignType: one, local: department_id, foreign: department_id, foreignAlias: Community }
+
+Community:
+  columns:
+    cid:           { type: integer(2), notnull: true, primary: true, autoincrement: true }
+    community:     { type: string(50), notnull: true, unique: true }
+    brief:         { type: string(2), unique: true  }
+    department_id: { type: integer(2) }
+    faculty_id:    { type: integer(2) }
+    program_id:    { type: integer(2) }
+  relations:
+    Department: { local: department_id, foreign: department_id, foreignAlias: Department }
+    Faculty:    { local: faculty_id, foreign: faculty_id, foreignAlias: Faculty	}
+    Program:    { local: program_id, foreign: program_id, foreignAlias: Program	}
+    ACommunities:    { local: cid, foreign: cid, foreignAlias:ACommunities	}
+      
+ACommunities:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid: { type: integer(4), notnull: true }
+    cid: { type: integer(2), notnull: true }    
+    # year class of, and optional subclass
+    class_year: { type: integer(2), notnull: true, range: [1964, 2015] }
+    class_sub:  { type: string(15)  }
+    # Maintained by trigger, main alumna order by
+    # Calculated field, shortcut to avoid heavy select query 
+    community:     { type: string(70)  }
+    department_id: { type: integer(2) }
+    faculty_id:    { type: integer(2) }
+    program_id:    { type: integer(2) }
+  relations:
+    Alumni:     { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+    Community:  { onDelete: Cascade, local: cid, foreign: cid, foreignAlias: Community }
+    Department: { onDelete: SET NULL, local: department_id, foreign: department_id, foreignAlias: Department }
+    Faculty:    { onDelete: SET NULL, local: faculty_id, foreign: faculty_id, foreignAlias: Faculty }
+    Program:    { onDelete: SET NULL, local: program_id, foreign: program_id, foreignAlias: Program }
+  attributes: { validate: true }
+
+#--- Section: Curriculum Vitae
+
+Competency:
+  actAs: 
+    I18n: { fields: [competency] }
+  columns:
+    competency_id: { type: integer(1), notnull: true, primary: true, autoincrement: true }
+    competency:    { type: string(30), notnull: true, unique: true }
+    memo: { type: clob(65535) }
+  relations:
+    ACompetencies: { type: many, foreignType: one, local: competency_id, foreign: competency_id, foreignAlias: ACompetencies }
+
+ACompetencies:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid: { type: integer(4), notnull: true }
+    competency_id: { type: integer(1) }
+    description:   { type: string(35) }
+  relations:
+    Alumni:     { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+    Competency: { onDelete: SET NULL, local: competency_id, foreign: competency_id, foreignAlias: Competency }
+
+ACertifications:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid: { type: integer(4), notnull: true }
+    certification: { type: string(50), notnull: true }
+    institution:   { type: string(20) }
+  relations:
+    Alumni: { onDelete: Cascade, onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+
+AExperiences:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid: { type: integer(4), notnull: true }
+    organization: { type: string(35), notnull: true }
+    description:  { type: string(50) }
+    job_position: { type: string(35) }
+    year_in:      { type: integer(2), range: [1964, 2015] }
+    year_out:     { type: integer(2), range: [1964, 2015] }
+  relations:
+    Alumni: { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+  attributes: { validate: true }
+  
+Strata:
+  columns:
+    strata_id: { type: integer(1), notnull: true, primary: true }
+    strata:    { type: string(15), notnull: true, unique: true }
+  relations:
+    ADegrees: { type: many, foreignType: one, local: strata_id, foreign: strata_id, foreignAlias: ADegrees }
+
+ADegrees:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid: { type: integer(4), notnull: true }
+    strata_id:     { type: integer(1) }
+    admitted:      { type: integer(2), range: [1964, 2015] }
+    graduated:     { type: integer(2), range: [1964, 2015] }
+    degree:        { type: string(20) }
+    institution:   { type: string(40), notnull: true }
+    major:         { type: string(40) }
+    minor:         { type: string(40) }
+    concentration: { type: string(40) }
+  relations:
+    Alumni: { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+    Strata: { onDelete: SET NULL, local: strata_id, foreign: strata_id, foreignAlias: Strata }
+  attributes: { validate: true }
+
+#--- Section: Company and Map
+
+Organization:
+  actAs: 
+    Timestampable: ~
+    NestedSet: { hasManyRoots: true, rootColumnName: root_id }
+  columns:
+    oid:  { name: oid as org_id, type: integer(4), notnull: true, primary: true, autoincrement: true }
+    name:    { type: string(50), notnull: true, unique: true }
+    prefix: { type: string(15) }
+    suffix: { type: string(15) }    
+    note:    { type: clob(65535) }
+    product: { type: string(60) }
+    # Calculated field
+    fullname:    { type: string(80) }
+    # deprecated in respect to NestedSet
+    # only show branchable to limit drop down form
+    # hasbranch:  { type: boolean, default: false }
+    
+AOMap:
+  actAs: 
+    Timestampable: ~
+  columns:
+    mid:    { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    aid:    { type: integer(4), notnull: true }
+    org_id: { type: integer(4), notnull: true }  
+    department:  { type: string(60) }
+    description: { type: string(40) }
+    struktural:  { type: string(50) }
+    fungsional:  { type: string(50) }
+    job_type_id:     { type: integer(1) }
+    job_position_id: { type: integer(1) }
+  relations:
+    Alumni:       { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
+    Organization: { onDelete: Cascade, local: org_id, foreign: org_id, foreignAlias: Organization }
+    JobType:      { onDelete: SET NULL, local: job_type_id, foreign: job_type_id, foreignAlias: JobType }
+    JobPosition:  { onDelete: SET NULL, local: job_position_id, foreign: job_position_id, foreignAlias: JobType }
+            
+JobType:
+  actAs: 
+    I18n: { fields: [job_type] }
+  columns:
+    job_type_id: { type: integer(1), notnull: true, primary: true }
+    job_type:    { type: string(50), notnull: true, unique: true }
+  relations:
+    AOMap: { type: many, foreignType: one, local: job_type_id, foreign: job_type_id, foreignAlias: AOMap }
+
+JobPosition:
+  actAs: 
+    I18n: { fields: [job_position] }
+  columns:
+    job_position_id: { type: integer(1), notnull: true, primary: true }
+    job_position:    { type: string(50), notnull: true, unique: true }
+  relations:
+    AOMap: { type: many, foreignType: one, local: job_position_id, foreign: job_position_id, foreignAlias: AOMap }
+
+BizField:
+  actAs: 
+    I18n: { fields: [biz_field] }
+  columns:
+    biz_field_id: { type: integer(1), notnull: true, primary: true }
+    biz_field:    { type: string(35), notnull: true, unique: true }
+    description: { type: clob(65535) }
+  relations:
+    OFields: { type: many, foreignType: one, local: biz_field_id, foreign: biz_field_id, foreignAlias: OFields }
+
+OFields:
+  columns:
+    did:    { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    org_id: { type: integer(4), notnull: true }
+    biz_field_id:    { type: integer(1) }
+    description: { type: string(35) }
+  relations:
+    Organization: { onDelete: Cascade, local: org_id, foreign: org_id, foreignAlias: Organization }
+    BizField: { onDelete: SET NULL, local: biz_field_id, foreign: biz_field_id, foreignAlias: BizField }
+
+#--- Section: Contact
+
+ContactType:
+  actAs: 
+    I18n: { fields: [contact_type] }
+  columns:
+    ct_id: { type: integer(1), notnull: true, primary: true }
+    contact_type: { type: string(25), notnull: true, unique: true }
+  relations:
+    Contacts: { type: many, foreignType: one, local: ct_id, foreign: ct_id, foreignAlias: Contacts }
+
+Contacts:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    lid: { type: integer(4), notnull: true }
+    link_type: { type: char(1) }
+    ct_id:     { type: integer(1), notnull: true }
+    contact:   { type: string(50), notnull: true }    
+  relations:
+    ContactType: { onDelete: SET NULL, local: ct_id, foreign: ct_id, foreignAlias: ContactType }
+      
+AContacts:
+  inheritance:
+    extends: Contacts
+    type: column_aggregation
+    keyField: link_type
+    keyValue: A
+  relations:
+    Alumni: { onDelete: CASCADE, local: lid, foreign: aid, foreignAlias: Alumni }
+  attributes: { export: table }
+  
+OContacts:
+  inheritance:
+    extends: Contacts
+    type: column_aggregation
+    keyField: link_type
+    keyValue: O
+  relations:
+    Organization: { onDelete: CASCADE, local: lid, foreign: org_id, foreignAlias: Organization }
+  attributes: { export: table }
+      
+MContacts:
+  inheritance:
+    extends: Contacts
+    type: column_aggregation
+    keyField: link_type
+    keyValue: M
+  relations:
+    AOMap: { onDelete: CASCADE, local: lid, foreign: mid, foreignAlias: AOMap }
+  attributes: { export: table }
+  
+#--- Section: Address
+
+Address:
+  columns:
+    did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    lid: { type: integer(4), notnull: true }
+    link_type:   { type: char(1) }
+    area:        { type: string(50) }
+    building:    { type: string(50) }
+    street:      { type: string(50) }
+    postal_code: { type: string(7) }
+    country_id:  { type: integer(2), default: 99 }
+    province_id: { type: integer(1) }
+    district_id: { type: integer(2) }
+    # Calculated field
+    address:     { type: string(175) }
+    region:      { type: string(110) }
+  relations:
+    Country:   { onDelete: SET NULL, local: country_id, foreign: country_id, foreignAlias: Country }
+    Province: { onDelete: SET NULL, local: province_id, foreign: province_id, foreignAlias: Province }
+    District:  { onDelete: SET NULL, local: district_id, foreign: district_id, foreignAlias: District }
+      
+AAddress:
+  inheritance:
+    extends: Address
+    type: column_aggregation
+    keyField: link_type
+    keyValue: A
+  relations:
+    Alumni: { onDelete: CASCADE, local: lid, foreign: aid, foreignAlias: Alumni }
+  attributes: { export: table }
+
+OAddress:
+  inheritance:
+    extends: Address
+    type: column_aggregation
+    keyField: link_type
+    keyValue: O
+  relations:
+    Organization: { onDelete: CASCADE, local: lid, foreign: org_id, foreignAlias: Organization }
+  attributes: { export: table }
+
+MAddress:
+  inheritance:
+    extends: Address
+    type: column_aggregation
+    keyField: link_type
+    keyValue: M
+  relations:
+    AOMap: { onDelete: CASCADE, local: lid, foreign: mid, foreignAlias: AOMap }
+  attributes: { export: table }
+
+Country:
+  columns:
+    country_id: { type: integer(2), notnull: true, primary: true }
+    country: { type: string(35), notnull: true, unique: true }
+  relations:
+    Address: { type: many, foreignType: one, local: country_id, foreign: country_id, foreignAlias: Address }
+
+Province:
+  columns:
+    province_id: { type: integer(1), notnull: true, primary: true }
+    province: { type: string(30), notnull: true, unique: true }
+  relations:
+    Address: { type: many, foreignType: one, local: province_id, foreign: province_id, foreignAlias: Address }
+    
+District:
+  columns:
+    district_id: { type: integer(2), notnull: true, primary: true }    
+    district: { type: string(30), notnull: true, unique: true }
+    province_id: { type: integer(1), notnull: true }
+  relations:
+    Province: { local: province_id, foreign: province_id, foreignAlias: Province }
+    Address: { type: many, foreignType: one, local: district_id, foreign: district_id, foreignAlias: Address }
