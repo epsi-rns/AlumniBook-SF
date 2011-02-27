@@ -120,7 +120,7 @@ Years ago, this old paper technology was considered suit our needs.
 
 
 
-X-Install
+Install
 -------
 *	Install symfony 1.4.8 via pear or put it in lib/vendor
 
