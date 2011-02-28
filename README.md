@@ -176,6 +176,7 @@ This work is licensed under
 [MIT License](http://www.opensource.org/licenses/mit-license.php).
 
 The Symfony Framework is licensed under MIT License.
+
 Mootools Javascript is licensed under MIT License.
 
 However some works may apply different license,
