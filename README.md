@@ -10,12 +10,13 @@ unofficial sample of symfony application,
 not as comprehensive as Jobeet nor Askeet.
 
 This is not about AlumniBook itself,
-but a real project  sample that you can reuse.
+but a real project sample customiztion that you can reuse.
 Several common tricks for data entry problem in information system
 has been solved, just have a look at the source code.
 
 For developer who want to use AlumniBook for their alumni foundation,
 you can read separate document in README.iluni.md .
+Have a look at demo site at [book.iluni.org](http://book.iluni.org).
 
 
 ## Goal
@@ -36,7 +37,7 @@ This rewrite version:
 
 The original legacy version:
 
-*	README.iluni.md
+*	[README.iluni.md](https://github.com/epsi/AlumniBook-SF/blob/master/README.iluni.md)
 *	[AlumniBook on CodeIgniter](https://github.com/epsi/AlumniBook-CI)
 *	[AlumniBook on Delphi](https://github.com/epsi/AlumniBook-D7)
 
@@ -105,6 +106,21 @@ Screenshot
 *	[Map relation of person and company](https://picasaweb.google.com/epsi.rns/AlumniBook#5578355686298380562)
 *	[Modal box for lookup](https://picasaweb.google.com/epsi.rns/AlumniBook#5578360380680365346)
 *	[Custom 404 error page](https://picasaweb.google.com/epsi.rns/AlumniBook#5578356441184900050)
+
+
+Private Plugins
+---------------
+
+Each plugins has its own readmes:
+
+*	[sfThemeOriclonePlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfThemeOriclonePlugin)
+*	[sfMootoolsPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMootoolsPlugin)
+*	[sfMooDatePickerPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooDatePickerPlugin)
+*	[sfMooDiaBoxPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooDiaBoxPlugin)
+*	[sfMooNoobSlidePlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooNoobSlidePlugin)
+*	[sfMooSideBarMenuPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooSideBarMenuPlugin)
+*	[sfMooTwitterGitterPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooTwitterGitterPlugin)
+*	[sfFormInputLookupModalPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfFormInputLookupModalPlugin)
 
 
 Demo Site
