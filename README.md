@@ -10,7 +10,7 @@ unofficial sample of symfony application,
 not as comprehensive as Jobeet nor Askeet.
 
 This is not about AlumniBook itself,
-but a real project sample customiztion that you can reuse.
+but a real project sample customization that you can reuse.
 Several common tricks for data entry problem in information system
 has been solved, just have a look at the source code.
 
