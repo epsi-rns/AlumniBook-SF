@@ -15,8 +15,7 @@ Several common tricks for data entry problem in information system
 has been solved, just have a look at the source code.
 
 For developer who want to use AlumniBook for their alumni foundation,
-you can read separate document in README.iluni.md .
-Have a look at demo site at [book.iluni.org](http://book.iluni.org).
+you can read separate document in README.iluni.md.
 
 
 ## Goal
