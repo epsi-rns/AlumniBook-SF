@@ -53,7 +53,8 @@ Feature
 	with header, footer and grouping feature.
 *	Different layouts: layout, error404, ajax, and modal.
 *	Mootools integration:
-	* ajax request
+	* ajax request, 
+	  now we have mootools-symfony-ajax combination (but not integration).
 	* form field validation
 	* theme effects
 	* sfWidgetFormDatePicker

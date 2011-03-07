@@ -36,12 +36,12 @@ class communityComponents extends sheetComponentsExt
 	  ); 	  
 	  $link_dept = link_to($row->getDepartment(), 
 		'acommunities/filter'.
-		'&fcly='.$row->getFacultyId().
+		'?fcly='.$row->getFacultyId().
 		'&dept='.$row->getDepartmentId()
 	  ); 
 	  $link_fcly = link_to($row->getFaculty(), 
 		'acommunities/filter'.
-		'&fcly='.$row->getFacultyId()
+		'?fcly='.$row->getFacultyId()
 	  );
 	  $link_prog = link_to($row->getProgram(), 
 		'acommunities/filter'.

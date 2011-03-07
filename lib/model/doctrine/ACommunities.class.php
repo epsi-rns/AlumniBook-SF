@@ -43,11 +43,13 @@ class ACommunities extends BaseACommunities
 		$dept = $this->get('department_id');  
 		$prog = $this->get('program_id');  
 		$fcly = $this->get('faculty_id');  
+		$year = $this->get('class_year');  
 	
 		$url_params = array();
 		if ($dept) $url_params[] = 'dept='.$dept;
 		if ($prog) $url_params[] = 'prog='.$prog;
 		if ($fcly) $url_params[] = 'fcly='.$fcly;
+		if ($year) $url_params[] = 'year='.$year;
 	
 		$url_all_param = implode('&', $url_params);
 	
