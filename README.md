@@ -8,11 +8,14 @@ and speed up their development process.
 AlumniBook is just another 
 unofficial sample of symfony application,
 not as comprehensive as Jobeet nor Askeet.
-
-This is not about AlumniBook itself,
-but a real project sample customization that you can reuse.
 Several common tricks for data entry problem in information system
 has been solved, just have a look at the source code.
+
+AlumniBook is a questionnaire based,
+simple data entry system,
+that you can use to make business directory.
+But this project is no longer about AlumniBook itself,
+but a real project sample customization that you can reuse.
 
 For developer who want to use AlumniBook for their alumni foundation,
 you can read separate document in README.iluni.md.

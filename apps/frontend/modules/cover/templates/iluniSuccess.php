@@ -41,12 +41,14 @@ you just need to find someone, a student or fresh graduate,
 to install and maintain alumni's database.
 It is has been released as open source under MIT style license.
 So you are free to use it, modify it, fork it, rebrand it or even sell it.
-All granted without my permission.<br/>
-<blockquote>Just find someone... give a chance, and challenge to our Juniors, okey...</blockquote>
+All granted without my permission.
 </p>
 
-<p>I might or might not give in place support depend on the situation,
-spare time, working distance, traffic jam, the weather and so on.
+<p>If you want support you can contact my friend, Prakasa Setiawan.
+He has more experience in our foundation,
+and also some professional nation wide enterprise project 
+much bigger than just managing alumnibook data collection.
+I won't give give in place support.
 In the mean time,  I think it is better
 to focus on making another useful product.</p>
 
