@@ -26,11 +26,6 @@ function baseurl_for($application, $absolute = false)
 			<?php echo link_to(__('Developer News'), 'cover/devnews'); ?>		
 		</li></ul>
 		<?php endif; ?>	
-
-		<ul class="menu"><li>
-			<?php echo link_to(('Readme ILUNI'), 'cover/iluni'); ?>
-		</li></ul>		
-			
 	</li></ul>
 </div>
 
