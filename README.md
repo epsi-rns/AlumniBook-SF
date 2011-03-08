@@ -23,6 +23,7 @@ you can read separate document in README.iluni.md.
 
 ## Goal
 
+Questionnaire based data entry.
 Learn, share, and get rid of legacy version.
 
 
