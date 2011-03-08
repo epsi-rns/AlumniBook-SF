@@ -7,9 +7,15 @@
  * @version    1.0
  */
  
-	window.addEvent('domready', function() {
-		mootools_watermark_scroll();
-	});
+window.addEvent('domready', function() {
+	mootools_watermark_scroll();
+});
+	
+if (Browser.ie6){
+    // Please upgrade your browser
+    window.location = 'http://ie6countdown.com/';
+}
+	
 
 // http://davidwalsh.name/break-out-frames
 

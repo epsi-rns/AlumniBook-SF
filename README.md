@@ -7,7 +7,7 @@ and speed up their development process.
 
 ## Goal
 
-*	Simple Questionnaire Based Data Entry, rewritten on Symfony.
+*	Simple questionnaire-based data-entry, rewritten on Symfony.
 *	Learn, share, and get rid of legacy version.
 
 
