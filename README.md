@@ -5,28 +5,10 @@ This is my first symfony application.
 For learning purpose so others may have sample
 and speed up their development process.
 
-AlumniBook is just another 
-unofficial sample of symfony application,
-not as comprehensive as Jobeet nor Askeet.
-Several common tricks for data entry problem in information system
-has been solved, just have a look at the source code.
-
-AlumniBook is a questionnaire based,
-simple data entry system,
-that you can use to make business directory.
-But this project is no longer about AlumniBook itself,
-but a real project sample customization that you can reuse.
-
-For developer who want to use AlumniBook for their alumni foundation,
-you can read separate document in README.iluni.md.
-
-
 ## Goal
 
-Questionnaire based data entry.
-
-Learn, share, and get rid of legacy version.
-
+*	Simple Questionnaire Based Data Entry, rewritten on Symfony.
+*	Learn, share, and get rid of legacy version.
 
 
 Related Link
@@ -37,13 +19,20 @@ This rewrite version:
 *	The source code at github
 	[AlumniBook on Symfony](https://github.com/epsi/AlumniBook-SF)
 *	Demo site in [book.iluni.org](http://book.iluni.org)
+	This site and any preloaded data is only a demonstration of its capability.
+	It is not intended for real data entry process.
 *	Screenshot at [Picasa](https://picasaweb.google.com/epsi.rns/AlumniBook#)
 
 The original legacy version:
 
-*	[README.iluni.md](https://github.com/epsi/AlumniBook-SF/blob/master/README.iluni.md)
 *	[AlumniBook on CodeIgniter](https://github.com/epsi/AlumniBook-CI)
 *	[AlumniBook on Delphi](https://github.com/epsi/AlumniBook-D7)
+
+Wiki
+
+*	[Home](https://github.com/epsi/AlumniBook-SF/wiki)
+*	[Feature Plan](https://github.com/epsi/AlumniBook-SF/wiki/Feature-Plan)
+*	[ILUNI](https://github.com/epsi/AlumniBook-SF/wiki/ILUNI)
 
 
 Feature
@@ -77,27 +66,6 @@ Feature
 *	Also utilize I18n translation in form filter.
 
 
-Feature Plan
-------------
-
-There are few 'must-try-improvement' that I plan 
-to include for the next minor version,
-if I can provide available spare time for myself.
-
-*	Any testing that I've skipped from Jobeet. 
-*	Batch action (delete)
-*	sfWidgetFormI18nChoiceCountry, 
-	and try Doctrine migration task, if neccessary
-*	More custom error from http://symfony-check.org/
-*	Mootools.net (docs, forge, tooltips).
-*	Extending with popular plugins.
-	Constraint: only light plugins.
-*	Read some symfony source code
-
-Currently, there is no a clear roadmap for this learning purpose version.
-No need to rush to rewrite to symfony2 until those item above finished.
-
-
 Screenshot
 ----------
 
@@ -126,18 +94,6 @@ Each plugins has its own readmes:
 *	[sfMooSideBarMenuPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooSideBarMenuPlugin)
 *	[sfMooTwitterGitterPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfMooTwitterGitterPlugin)
 *	[sfFormInputLookupModalPlugin](https://github.com/epsi/AlumniBook-SF/tree/master/plugins/sfFormInputLookupModalPlugin)
-
-
-Demo Site
----------
-
-There is a demo site at [book.iluni.org](http://book.iluni.org).
-
-Although we have an internet demo.
-The project itself is intended for use in small intranet.
-Instead of self submitted data from alumni,
-the data is collected by questionaire.
-Years ago, this old paper technology was considered suit our needs.
 
 
 

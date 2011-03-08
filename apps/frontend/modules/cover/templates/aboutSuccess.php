@@ -19,6 +19,14 @@ just take a look at the source code.</p>
 <a class="readon" href="https://github.com/epsi/AlumniBook-SF">AlumniBook on Github</a>
 &nbsp; &#x00ab;</p>
 
+<h4>Support for ILUNI</h4>
+You can contact Dwika Budhyantara (E'93) or Prakasa Setiawan (GP'95) at wiki.
+
+<p>More about Business Directory Project: &#x00bb; &nbsp;
+<a class="readon" href="https://github.com/epsi/AlumniBook-SF/wiki/ILUNI">Wiki - ILUNI Page</a>
+&nbsp; &#x00ab;</p>
+
+
 <h4>Featuring</h4>
 
 <ul>
@@ -55,3 +63,5 @@ just take a look at the source code.</p>
 	most are only mootools wrapper.</li>
 	<li>Also utilize I18n translation in form filter.</li>
 </ul>
+
+

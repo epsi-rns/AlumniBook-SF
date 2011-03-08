@@ -31,6 +31,4 @@ class coverActions extends sfActions
   public function executeDevnews(sfWebRequest $request)
   {  }    
   
-  public function executeIluni(sfWebRequest $request)
-  {  }  
 }
