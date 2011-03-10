@@ -2,10 +2,12 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new sfTestFunctional(new sfAuthBrowser());
 
 $browser->
-  get('/religion/index')->
+  doAuth('admin', 'admin')->
+ 
+  get('/religion')->
 
   with('request')->begin()->
     isParameter('module', 'religion')->

@@ -1,5 +1,5 @@
 <?php 
-	include('ItemBaseHelper.php');
+	include_once('ItemBaseHelper.php');
 
 class item_org extends item_base {
 

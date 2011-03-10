@@ -114,11 +114,11 @@ ACompetencies:
   columns:
     did: { type: integer(4), notnull: true, primary: true, autoincrement: true }
     aid: { type: integer(4), notnull: true }
-    competency_id: { type: integer(1) }
+    competency_id: { type: integer(1), notnull: true }
     description:   { type: string(35) }
   relations:
     Alumni:     { onDelete: Cascade, local: aid, foreign: aid, foreignAlias: Alumni }
-    Competency: { onDelete: SET NULL, local: competency_id, foreign: competency_id, foreignAlias: Competency }
+    Competency: { onDelete: Cascade, local: competency_id, foreign: competency_id, foreignAlias: Competency }
 
 ACertifications:
   columns:
@@ -236,11 +236,11 @@ OFields:
   columns:
     did:    { type: integer(4), notnull: true, primary: true, autoincrement: true }
     org_id: { type: integer(4), notnull: true }
-    biz_field_id:    { type: integer(1) }
+    biz_field_id:    { type: integer(1), notnull: true }
     description: { type: string(35) }
   relations:
     Organization: { onDelete: Cascade, local: org_id, foreign: org_id, foreignAlias: Organization }
-    BizField: { onDelete: SET NULL, local: biz_field_id, foreign: biz_field_id, foreignAlias: BizField }
+    BizField: { onDelete: cascade, local: biz_field_id, foreign: biz_field_id, foreignAlias: BizField }
 
 #--- Section: Contact
 

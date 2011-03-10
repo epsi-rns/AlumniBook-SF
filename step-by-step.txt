@@ -352,6 +352,11 @@ http://alumni/frontend_dev.php/acompetencies/25/new
 $ symfony app:routes backend
 $ symfony app:routes frontend acompetencies_list
 
+=== section 09 ===
+
+$ symfony test:functional backend provinceActions
+$ symfony test:functional frontend acertificationsActions
+$ symfony test:functional frontend -t
 
 === section 12 ===
   

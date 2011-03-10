@@ -20,9 +20,10 @@ class OFieldsForm extends BaseOFieldsForm
 		->orderBy('r.biz_field_id');    
 
 	$this->widgetSchema['biz_field_id'] = new sfWidgetFormDoctrineChoice(
-		array('model' => 'BizField', 'add_empty' => true, 'query' =>$choice_query));
+		array('model' => 'BizField', 'add_empty' => '--Select Business Field--', 
+			'query' =>$choice_query));
 	$this->validatorSchema['biz_field_id'] = new sfValidatorDoctrineChoice(
-		array('required' => false, 'model' => 'BizField', 'column' => 'biz_field_id'));    
+		array('model' => 'BizField', 'column' => 'biz_field_id'));    
     $this->widgetSchema['biz_field_id']->setLabel('Business Field');	
   }
 }

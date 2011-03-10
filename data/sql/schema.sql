@@ -1,7 +1,7 @@
 CREATE TABLE address (did INT AUTO_INCREMENT, lid INT NOT NULL, link_type CHAR(1), area VARCHAR(50), building VARCHAR(50), street VARCHAR(50), postal_code VARCHAR(7), country_id SMALLINT DEFAULT 99, province_id TINYINT, district_id SMALLINT, address VARCHAR(175), region VARCHAR(110), PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE a_certifications (did INT AUTO_INCREMENT, aid INT NOT NULL, certification VARCHAR(50) NOT NULL, institution VARCHAR(20), INDEX aid_idx (aid), PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE a_communities (did INT AUTO_INCREMENT, aid INT NOT NULL, cid SMALLINT NOT NULL, class_year SMALLINT NOT NULL, class_sub VARCHAR(15), community VARCHAR(70), department_id SMALLINT, faculty_id SMALLINT, program_id SMALLINT, INDEX aid_idx (aid), INDEX cid_idx (cid), INDEX department_id_idx (department_id), INDEX faculty_id_idx (faculty_id), INDEX program_id_idx (program_id), PRIMARY KEY(did)) ENGINE = INNODB;
-CREATE TABLE a_competencies (did INT AUTO_INCREMENT, aid INT NOT NULL, competency_id TINYINT, description VARCHAR(35), INDEX aid_idx (aid), INDEX competency_id_idx (competency_id), PRIMARY KEY(did)) ENGINE = INNODB;
+CREATE TABLE a_competencies (did INT AUTO_INCREMENT, aid INT NOT NULL, competency_id TINYINT NOT NULL, description VARCHAR(35), INDEX aid_idx (aid), INDEX competency_id_idx (competency_id), PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE contacts (did INT AUTO_INCREMENT, lid INT NOT NULL, link_type CHAR(1), ct_id TINYINT NOT NULL, contact VARCHAR(50) NOT NULL, PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE a_degrees (did INT AUTO_INCREMENT, aid INT NOT NULL, strata_id TINYINT, admitted SMALLINT, graduated SMALLINT, degree VARCHAR(20), institution VARCHAR(40) NOT NULL, major VARCHAR(40), minor VARCHAR(40), concentration VARCHAR(40), INDEX aid_idx (aid), INDEX strata_id_idx (strata_id), PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE a_experiences (did INT AUTO_INCREMENT, aid INT NOT NULL, organization VARCHAR(35) NOT NULL, description VARCHAR(50), job_position VARCHAR(35), year_in SMALLINT, year_out SMALLINT, INDEX aid_idx (aid), PRIMARY KEY(did)) ENGINE = INNODB;
@@ -26,7 +26,7 @@ CREATE TABLE job_position_translation (job_position_id TINYINT, job_position VAR
 CREATE TABLE job_position (job_position_id TINYINT, PRIMARY KEY(job_position_id)) ENGINE = INNODB;
 CREATE TABLE job_type_translation (job_type_id TINYINT, job_type VARCHAR(50) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(job_type_id, lang)) ENGINE = INNODB;
 CREATE TABLE job_type (job_type_id TINYINT, PRIMARY KEY(job_type_id)) ENGINE = INNODB;
-CREATE TABLE o_fields (did INT AUTO_INCREMENT, org_id INT NOT NULL, biz_field_id TINYINT, description VARCHAR(35), INDEX org_id_idx (org_id), INDEX biz_field_id_idx (biz_field_id), PRIMARY KEY(did)) ENGINE = INNODB;
+CREATE TABLE o_fields (did INT AUTO_INCREMENT, org_id INT NOT NULL, biz_field_id TINYINT NOT NULL, description VARCHAR(35), INDEX org_id_idx (org_id), INDEX biz_field_id_idx (biz_field_id), PRIMARY KEY(did)) ENGINE = INNODB;
 CREATE TABLE organization (oid INT AUTO_INCREMENT, name VARCHAR(50) NOT NULL UNIQUE, prefix VARCHAR(15), suffix VARCHAR(15), note MEDIUMTEXT, product VARCHAR(60), fullname VARCHAR(80), created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, root_id BIGINT, lft INT, rgt INT, level SMALLINT, PRIMARY KEY(oid)) ENGINE = INNODB;
 CREATE TABLE program_translation (program_id SMALLINT, program VARCHAR(20) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(program_id, lang)) ENGINE = INNODB;
 CREATE TABLE program (program_id SMALLINT AUTO_INCREMENT, PRIMARY KEY(program_id)) ENGINE = INNODB;
@@ -47,7 +47,7 @@ ALTER TABLE a_communities ADD CONSTRAINT a_communities_faculty_id_faculty_facult
 ALTER TABLE a_communities ADD CONSTRAINT a_communities_department_id_department_department_id FOREIGN KEY (department_id) REFERENCES department(department_id) ON DELETE SET NULL;
 ALTER TABLE a_communities ADD CONSTRAINT a_communities_cid_community_cid FOREIGN KEY (cid) REFERENCES community(cid) ON DELETE CASCADE;
 ALTER TABLE a_communities ADD CONSTRAINT a_communities_aid_alumni_aid FOREIGN KEY (aid) REFERENCES alumni(aid) ON DELETE CASCADE;
-ALTER TABLE a_competencies ADD CONSTRAINT a_competencies_competency_id_competency_competency_id FOREIGN KEY (competency_id) REFERENCES competency(competency_id) ON DELETE SET NULL;
+ALTER TABLE a_competencies ADD CONSTRAINT a_competencies_competency_id_competency_competency_id FOREIGN KEY (competency_id) REFERENCES competency(competency_id) ON DELETE CASCADE;
 ALTER TABLE a_competencies ADD CONSTRAINT a_competencies_aid_alumni_aid FOREIGN KEY (aid) REFERENCES alumni(aid) ON DELETE CASCADE;
 ALTER TABLE a_degrees ADD CONSTRAINT a_degrees_strata_id_strata_strata_id FOREIGN KEY (strata_id) REFERENCES strata(strata_id) ON DELETE SET NULL;
 ALTER TABLE a_degrees ADD CONSTRAINT a_degrees_aid_alumni_aid FOREIGN KEY (aid) REFERENCES alumni(aid) ON DELETE CASCADE;
@@ -70,7 +70,7 @@ ALTER TABLE faculty_translation ADD CONSTRAINT faculty_translation_faculty_id_fa
 ALTER TABLE job_position_translation ADD CONSTRAINT jjjj_1 FOREIGN KEY (job_position_id) REFERENCES job_position(job_position_id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE job_type_translation ADD CONSTRAINT job_type_translation_job_type_id_job_type_job_type_id FOREIGN KEY (job_type_id) REFERENCES job_type(job_type_id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE o_fields ADD CONSTRAINT o_fields_org_id_organization_oid FOREIGN KEY (org_id) REFERENCES organization(oid) ON DELETE CASCADE;
-ALTER TABLE o_fields ADD CONSTRAINT o_fields_biz_field_id_biz_field_biz_field_id FOREIGN KEY (biz_field_id) REFERENCES biz_field(biz_field_id) ON DELETE SET NULL;
+ALTER TABLE o_fields ADD CONSTRAINT o_fields_biz_field_id_biz_field_biz_field_id FOREIGN KEY (biz_field_id) REFERENCES biz_field(biz_field_id) ON DELETE CASCADE;
 ALTER TABLE program_translation ADD CONSTRAINT program_translation_program_id_program_program_id FOREIGN KEY (program_id) REFERENCES program(program_id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE sf_guard_forgot_password ADD CONSTRAINT sf_guard_forgot_password_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE sf_guard_group_permission ADD CONSTRAINT sf_guard_group_permission_permission_id_sf_guard_permission_id FOREIGN KEY (permission_id) REFERENCES sf_guard_permission(id) ON DELETE CASCADE;

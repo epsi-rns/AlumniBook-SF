@@ -17,14 +17,14 @@ abstract class BaseOFieldsForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'did'          => new sfWidgetFormInputHidden(),
       'org_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Organization'), 'add_empty' => false)),
-      'biz_field_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BizField'), 'add_empty' => true)),
+      'biz_field_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BizField'), 'add_empty' => false)),
       'description'  => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'did'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('did')), 'empty_value' => $this->getObject()->get('did'), 'required' => false)),
       'org_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Organization'))),
-      'biz_field_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('BizField'), 'required' => false)),
+      'biz_field_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('BizField'))),
       'description'  => new sfValidatorString(array('max_length' => 35, 'required' => false)),
     ));
 

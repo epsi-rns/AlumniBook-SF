@@ -2,9 +2,11 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new sfTestFunctional(new sfAuthBrowser());
 
 $browser->
+  doAuth('editor', 'editor')->
+  
   get('/department/index')->
 
   with('request')->begin()->

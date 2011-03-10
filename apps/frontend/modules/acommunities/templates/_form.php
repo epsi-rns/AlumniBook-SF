@@ -16,6 +16,8 @@
 ?>
 <script type="text/javascript">
 	window.addEvent("domready",function(){	
+		document.id('a_communities_cid')
+			.addClass('required');
 		document.id('a_communities_class_year')
 			.addClass('required validate-integer');
 		new FormValidator.Inline('form_validate');		

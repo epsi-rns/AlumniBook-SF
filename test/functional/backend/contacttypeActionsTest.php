@@ -2,10 +2,12 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new sfTestFunctional(new sfAuthBrowser());
 
 $browser->
-  get('/contacttype/index')->
+  doAuth('admin', 'admin')->
+ 
+  get('/contacttype')->
 
   with('request')->begin()->
     isParameter('module', 'contacttype')->

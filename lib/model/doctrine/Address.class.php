@@ -12,6 +12,15 @@
  */
 class Address extends BaseAddress
 {
+  /*
+  // this part is only required for fixtures
+  public function save(Doctrine_Connection $conn = null)
+  {
+    if ( ... )
+      return parent::save($conn);
+    else return null;  
+  }
+  */ 
 }
 
 class AddressHydrationListener extends Doctrine_Record_Listener
@@ -26,7 +35,7 @@ class AddressHydrationListener extends Doctrine_Record_Listener
 		if (!empty($row->street))	$address[] = $row->street;
 		if (!empty($row->area))		$address[] = $row->area;
 		
-		$row->address = implode(', ', $address);
+		$row->address = trim(implode(', ', $address));
 		
 		// region part
 		if ($row->district_id)
@@ -44,6 +53,6 @@ class AddressHydrationListener extends Doctrine_Record_Listener
 		if ($row->postal_code)
 			$region[] = $row->postal_code;
 
-		$row->region = implode(', ', $region);
+		$row->region = trim(implode(', ', $region));
     }
 }

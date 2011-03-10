@@ -48,6 +48,7 @@ abstract class BaseACompetencies extends sfDoctrineRecord
              ));
         $this->hasColumn('competency_id', 'integer', 1, array(
              'type' => 'integer',
+             'notnull' => true,
              'length' => 1,
              ));
         $this->hasColumn('description', 'string', 35, array(
@@ -67,6 +68,6 @@ abstract class BaseACompetencies extends sfDoctrineRecord
         $this->hasOne('Competency', array(
              'local' => 'competency_id',
              'foreign' => 'competency_id',
-             'onDelete' => 'SET NULL'));
+             'onDelete' => 'Cascade'));
     }
 }

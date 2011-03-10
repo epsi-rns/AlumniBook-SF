@@ -19,6 +19,10 @@ class ACommunitiesForm extends BaseACommunitiesForm
       $this['faculty_id'], $this['department_id']
     );
     
+    $this->widgetSchema['cid'] = new sfWidgetFormDoctrineChoice(
+		array('model' => $this->getRelatedModelName('Community'), 
+		'add_empty' => '--Select Community--'));
+    
     $this->widgetSchema->setLabels(array(
 		'cid' => 'Campus Community',
 		'class_year'	=> 'Class of (year)',

@@ -48,6 +48,7 @@ abstract class BaseOFields extends sfDoctrineRecord
              ));
         $this->hasColumn('biz_field_id', 'integer', 1, array(
              'type' => 'integer',
+             'notnull' => true,
              'length' => 1,
              ));
         $this->hasColumn('description', 'string', 35, array(
@@ -67,6 +68,6 @@ abstract class BaseOFields extends sfDoctrineRecord
         $this->hasOne('BizField', array(
              'local' => 'biz_field_id',
              'foreign' => 'biz_field_id',
-             'onDelete' => 'SET NULL'));
+             'onDelete' => 'cascade'));
     }
 }

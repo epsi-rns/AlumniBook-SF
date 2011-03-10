@@ -23,7 +23,6 @@ class OMapForm extends AOMapForm
 				'title' => 'Lookup Alumni Name')
 	);
 	$this->widgetSchema['aid']->setLabel('Alumni');
-	$this->validatorSchema['aid'] = new sfValidatorPass(); 
 	
     unset(
       $this['created_at'], $this['updated_at']

@@ -39,11 +39,11 @@ class officeActions extends sfActionsExtCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->lid = $request->getParameter('oid');
-	$this->forward404Unless($this->lid);
+	$lid = $request->getParameter('oid');
+	$this->forward404Unless($lid);
 
     $this->form = new OAddressForm();
-    $this->form->setDefault('lid', $this->lid); 
+    $this->form->setDefault('lid', $lid); 
     $this->form->setDefault('link_type', 'O');     
   }
   

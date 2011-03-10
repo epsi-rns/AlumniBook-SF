@@ -142,3 +142,6 @@ Community:
     department_id: 403
     faculty_id:    4
     program_id:    30
+  101:
+    cid:           101
+    community:     Boy Scout

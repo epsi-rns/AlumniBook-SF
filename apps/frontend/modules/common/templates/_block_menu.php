@@ -1,12 +1,4 @@
-<?php
-function baseurl_for($application, $absolute = false)
-{
-	$env = sfConfig::get('sf_environment');
-    $url = $absolute ? 'http://' . $_SERVER["HTTP_HOST"] : '';
-    $url .= '/' . $application . ($env != 'prod' ? '_' . $env : '') . '.php/';
-    return $url;
-}
-?>
+<?php use_helper('CommonUrl'); ?>
 
 <div class="moduletable_menu">
 <h3><?php echo __('Start Page'); ?></h3>

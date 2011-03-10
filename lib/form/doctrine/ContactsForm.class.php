@@ -14,6 +14,9 @@ class ContactsForm extends BaseContactsForm
   {
 	$this->widgetSchema['lid'] = new sfWidgetFormInputHidden();
 	$this->widgetSchema['link_type'] = new sfWidgetFormInputHidden();
+	$this->widgetSchema['ct_id'] = new sfWidgetFormDoctrineChoice(
+		array('model' => $this->getRelatedModelName('ContactType'), 
+			'add_empty' => '--Select Contact Type--'));
     $this->widgetSchema['ct_id']->setLabel('Contact Type');
   }
 }

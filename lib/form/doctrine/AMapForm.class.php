@@ -23,7 +23,6 @@ class AMapForm extends AOMapForm
 				'title' => 'Lookup Organization/ Company Name')
 	);
 	$this->widgetSchema['org_id']->setLabel('Organization');
-	$this->validatorSchema['org_id'] = new sfValidatorPass(); 
 	
     unset(
       $this['created_at'], $this['updated_at']

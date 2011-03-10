@@ -2,10 +2,12 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new sfTestFunctional(new sfAuthBrowser());
 
 $browser->
-  get('/strata/index')->
+  doAuth('admin', 'admin')->
+ 
+  get('/strata')->
 
   with('request')->begin()->
     isParameter('module', 'strata')->
