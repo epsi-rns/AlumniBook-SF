@@ -135,7 +135,7 @@ class ajaxActions extends sfActionsAlumni
 
 	$w = new sfWidgetFormDoctrineChoice(array(
 		'model' => 'Department', 'query' => $query,	'add_empty' => $all
-	));
+	), array('class'=>'required'));
 
 	$select = $w->render($formName.'[department_id]', $value, array());
 

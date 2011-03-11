@@ -142,6 +142,11 @@ Community:
     department_id: 403
     faculty_id:    4
     program_id:    30
+
+# Good idea, but need careful consideration
   101:
     cid:           101
     community:     Boy Scout
+    department_id: -1
+    faculty_id:    -1
+    program_id:    -1

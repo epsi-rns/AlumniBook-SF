@@ -16,4 +16,11 @@ class FacultyTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Faculty');
     }
+    
+	public function retrieveBackendFaculty(Doctrine_Query $q)
+	{
+		$rootAlias = $q->getRootAlias(); 
+		$q->where($r.'.faculty_id > 0');
+		return $q;
+	}
 }

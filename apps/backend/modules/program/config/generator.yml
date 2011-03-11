@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        table_method: retrieveBackendProgram
         title: Manage University Program
         sort: [program_id, asc]
         display: [=program]

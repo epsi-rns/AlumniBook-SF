@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="id" datatype="plaintext" original="messages" date="2011-02-27T01:54:34Z" product-name="messages">
+  <file source-language="EN" target-language="id" datatype="plaintext" original="messages" date="2011-03-11T05:48:42Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -679,11 +679,15 @@
       <trans-unit id="170">
         <source>Male</source>
         <target>Pria</target>
-      </trans-unit>      
+      </trans-unit>
       <trans-unit id="171">
         <source>Female</source>
         <target>Wanita</target>
-      </trans-unit>      
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Organizations/ Companies</source>
+        <target>Organisasi/ Perusahaan</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

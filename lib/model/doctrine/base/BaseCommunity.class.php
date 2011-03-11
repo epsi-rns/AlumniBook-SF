@@ -66,14 +66,17 @@ abstract class BaseCommunity extends sfDoctrineRecord
              ));
         $this->hasColumn('department_id', 'integer', 2, array(
              'type' => 'integer',
+             'notnull' => true,
              'length' => 2,
              ));
         $this->hasColumn('faculty_id', 'integer', 2, array(
              'type' => 'integer',
+             'notnull' => true,
              'length' => 2,
              ));
         $this->hasColumn('program_id', 'integer', 2, array(
              'type' => 'integer',
+             'notnull' => true,
              'length' => 2,
              ));
     }

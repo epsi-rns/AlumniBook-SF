@@ -1,4 +1,11 @@
 Faculty:
+  independent:
+    faculty_id:  -1
+    Translation:
+      en:
+        faculty: Independent
+      id:
+        faculty: Otonom/ Semi Otonom
   1:
     faculty_id:  1
     Translation:

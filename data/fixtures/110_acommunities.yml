@@ -23,10 +23,16 @@ ACommunities:
     aid: 3
     cid: 47
     class_year: 2008
- 
+
 <?php for ($i = 100; $i <= 130; $i++): ?>
   anon_<?php echo $i ?>:
     aid: <?php echo $i."\n" ?>
     cid: <?php echo (($i % 8) + 1)."\n" ?>
     class_year: <?php echo 1875+(round($i/5)*5)."\n" ?>
 <?php endfor ?>
+
+# Good idea, but need careful consideration
+  Rizqi Lagi:
+    aid: 25
+    cid: 101
+    class_year: 1993    

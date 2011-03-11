@@ -45,7 +45,7 @@
 
 <div class="moduletable_menu">
 <h3><?php echo __('Browse Organizations'); ?></h3>
-	<?php left_menu_module(__('Organizations'), 'org/filter'); ?>
+	<?php left_menu_module(__('Organizations/ Companies'), 'org/filter'); ?>
 	<?php left_menu_module(__('Business Fields'), 'ofields/category'); ?>
 </div>
 

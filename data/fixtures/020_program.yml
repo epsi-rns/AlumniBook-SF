@@ -1,4 +1,11 @@
 Program:
+  independent:
+    program_id: -1
+    Translation:
+      en:
+        program: Independent
+      id:
+        program: Otonom/ Semi Otonom
   1:
     program_id: 10
     Translation:

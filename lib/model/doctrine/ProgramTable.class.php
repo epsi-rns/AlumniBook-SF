@@ -16,4 +16,11 @@ class ProgramTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Program');
     }
+    
+	public function retrieveBackendProgram(Doctrine_Query $q)
+	{
+		$rootAlias = $q->getRootAlias(); 
+		$q->where($r.'.program_id > 0');
+		return $q;
+	}
 }

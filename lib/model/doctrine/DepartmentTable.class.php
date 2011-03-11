@@ -20,7 +20,8 @@ class DepartmentTable extends Doctrine_Table
 	public function retrieveBackendDepartment(Doctrine_Query $q)
 	{
 		$rootAlias = $q->getRootAlias(); 
-		$q->leftJoin($rootAlias.'.Faculty f'); 
+		$q->leftJoin($rootAlias.'.Faculty f');
+		$q->where($r.'.department_id > 0');
 		return $q;
 	}
 }

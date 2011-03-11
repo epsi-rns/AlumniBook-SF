@@ -23,6 +23,9 @@
 <script type="text/javascript">
 	window.addEvent("domready",function(){	
 		document.id('community_community').addClass('required');
+		document.id('community_program_id').addClass('required');
+		document.id('community_department_id').addClass('required');
+		document.id('community_faculty_id').addClass('required');
 		new FormValidator.Inline('form_validate');		
 	});
 </script>

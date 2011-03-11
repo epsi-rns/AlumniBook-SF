@@ -21,7 +21,7 @@ This rewrite version:
 *	Demo site in [book.iluni.org](http://book.iluni.org)
 	This site and any preloaded data is only a demonstration of its capability.
 	It is not intended for real data entry process.
-*	Screenshot at [Picasa](https://picasaweb.google.com/epsi.rns/AlumniBook#)
+*	Screenshot at [picasaweb.google.com/epsi.rns](https://picasaweb.google.com/epsi.rns/AlumniBook#)
 
 The original legacy version:
 
@@ -79,7 +79,8 @@ Screenshot
 *	[Map relation of person and company](https://picasaweb.google.com/epsi.rns/AlumniBook#5578355686298380562)
 *	[Modal box for lookup](https://picasaweb.google.com/epsi.rns/AlumniBook#5578360380680365346)
 *	[Custom 404 error page](https://picasaweb.google.com/epsi.rns/AlumniBook#5578356441184900050)
-
+*	[Module item lime test](https://picasaweb.google.com/epsi.rns/AlumniBook#5582497997088174482)
+*	[All functional lime test](https://picasaweb.google.com/epsi.rns/AlumniBook#5582498018623503426)
 
 Private Plugins
 ---------------

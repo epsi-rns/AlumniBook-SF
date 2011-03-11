@@ -67,9 +67,9 @@ Community:
     cid:           { type: integer(2), notnull: true, primary: true, autoincrement: true }
     community:     { type: string(50), notnull: true, unique: true }
     brief:         { type: string(2), unique: true  }
-    department_id: { type: integer(2) }
-    faculty_id:    { type: integer(2) }
-    program_id:    { type: integer(2) }
+    department_id: { type: integer(2), notnull: true }
+    faculty_id:    { type: integer(2), notnull: true }
+    program_id:    { type: integer(2), notnull: true }
   relations:
     Department: { local: department_id, foreign: department_id, foreignAlias: Department }
     Faculty:    { local: faculty_id, foreign: faculty_id, foreignAlias: Faculty	}

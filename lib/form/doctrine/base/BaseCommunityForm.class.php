@@ -18,18 +18,18 @@ abstract class BaseCommunityForm extends BaseFormDoctrine
       'cid'           => new sfWidgetFormInputHidden(),
       'community'     => new sfWidgetFormInputText(),
       'brief'         => new sfWidgetFormInputText(),
-      'department_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'add_empty' => true)),
-      'faculty_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Faculty'), 'add_empty' => true)),
-      'program_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Program'), 'add_empty' => true)),
+      'department_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'add_empty' => false)),
+      'faculty_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Faculty'), 'add_empty' => false)),
+      'program_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Program'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
       'cid'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('cid')), 'empty_value' => $this->getObject()->get('cid'), 'required' => false)),
       'community'     => new sfValidatorString(array('max_length' => 50)),
       'brief'         => new sfValidatorString(array('max_length' => 2, 'required' => false)),
-      'department_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'required' => false)),
-      'faculty_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Faculty'), 'required' => false)),
-      'program_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Program'), 'required' => false)),
+      'department_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Department'))),
+      'faculty_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Faculty'))),
+      'program_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Program'))),
     ));
 
     $this->validatorSchema->setPostValidator(
