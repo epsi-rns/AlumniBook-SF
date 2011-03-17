@@ -40,11 +40,11 @@ class acontactsActions extends sfActionsAlumniCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->lid = $request->getParameter('aid');
-	$this->forward404Unless($this->lid);
+	$lid = $request->getParameter('aid');
+	$this->forward404Unless($lid);
 
     $this->form = new AContactsForm();
-    $this->form->setDefault('lid', $this->lid); 
+    $this->form->setDefault('lid', $lid); 
     $this->form->setDefault('link_type', 'A'); 
   }
   

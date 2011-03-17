@@ -39,11 +39,11 @@ class acommunitiesActions extends sfActionsAlumniCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->aid = $request->getParameter('aid');
-	$this->forward404Unless($this->aid);
+	$aid = $request->getParameter('aid');
+	$this->forward404Unless($aid);
 
     $this->form = new ACommunitiesForm();    
-    $this->form->setDefault('aid', $this->aid); 
+    $this->form->setDefault('aid', $aid); 
   }
 
   public function executeEdit(sfWebRequest $request)

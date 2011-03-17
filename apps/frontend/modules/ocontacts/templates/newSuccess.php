@@ -1,4 +1,1 @@
-<?php
-	include_partial('form', 
-		array('form' => $form, 'lid' => $lid
-	));
+<?php include_partial('form', array('form' => $form));

@@ -69,11 +69,11 @@ class amapActions extends sfActionsExtCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->aid = $request->getParameter('aid');
-	$this->forward404Unless($this->aid);
+	$aid = $request->getParameter('aid');
+	$this->forward404Unless($aid);
 
     $this->form = new AMapForm();
-    $this->form->setDefault('aid', $this->aid); 
+    $this->form->setDefault('aid', $aid); 
     
     $widgetSchema = $this->form->getWidgetSchema();
 	$widgetSchema['aid'] = new sfWidgetFormInputHidden();

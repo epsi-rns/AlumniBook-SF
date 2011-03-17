@@ -6,7 +6,8 @@
 	use_javascripts_for_form($form);
 
 	$isNew = $form->getObject()->isNew();
-	$mid = $form->getObject()->getMid();
+	$mid = $form->getObject()->get('mid');
+	$org_id = $form->getObject()->get('org_id');
 	
 	$attr_list = array('class' => 'icon_list'); 
 	$attr_dele = array(

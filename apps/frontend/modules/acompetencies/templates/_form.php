@@ -3,7 +3,8 @@
 	use_javascripts_for_form($form);
 
 	$isNew = $form->getObject()->isNew();
-	$did = $form->getObject()->getDid();
+	$did = $form->getObject()->get('did');
+	$aid = $form->getObject()->get('aid');
 	
 	$attr_list = array('class' => 'icon_list'); 
 	$attr_dele = array(

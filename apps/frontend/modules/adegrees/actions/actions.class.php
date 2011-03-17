@@ -41,11 +41,11 @@ class adegreesActions extends sfActionsAlumniCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->aid = $request->getParameter('aid');
-	$this->forward404Unless($this->aid);
+	$aid = $request->getParameter('aid');
+	$this->forward404Unless($aid);
 
     $this->form = new ADegreesForm();
-    $this->form->setDefault('aid', $this->aid);     
+    $this->form->setDefault('aid', $aid);
     $this->form->setDefault('strata_id', 10); 
     $this->form->setDefault('degree', 'ST');     
     $this->form->setDefault('institution', 'University of Indonesia'); 

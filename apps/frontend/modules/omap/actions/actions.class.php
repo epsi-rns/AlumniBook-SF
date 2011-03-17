@@ -69,11 +69,11 @@ class omapActions extends sfActionsExtCRUD
 
   public function executeNew(sfWebRequest $request)
   {
-	$this->org_id = $request->getParameter('oid');
-	$this->forward404Unless($this->org_id);
+	$org_id = $request->getParameter('oid');
+	$this->forward404Unless($org_id);
 
     $this->form = new OMapForm();
-    $this->form->setDefault('org_id', $this->org_id); 
+    $this->form->setDefault('org_id', $org_id); 
   }
   
   public function executeEdit(sfWebRequest $request)
