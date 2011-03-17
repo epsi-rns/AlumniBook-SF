@@ -16,4 +16,11 @@ class BizFieldTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('BizField');
     }
+    
+	public function retrieveBackendBizField(Doctrine_Query $q)
+	{
+		$r = $q->getRootAlias(); 
+		$q->leftJoin($r.'.Translation t');
+		return $q;
+	}
 }

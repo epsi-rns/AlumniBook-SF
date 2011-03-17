@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        table_method: retrieveBackendJobPosition
         title: Manage Rank (Job Position) Categories
         sort: [job_position_id, asc]
         display: [=job_position]

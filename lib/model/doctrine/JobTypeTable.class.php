@@ -20,7 +20,9 @@ class JobTypeTable extends Doctrine_Table
 	public function retrieveBackendJobType(Doctrine_Query $q)
 	{
 		$r = $q->getRootAlias(); 
-		$q->where($r.'.job_type_id > 1');
+		$q
+			->where($r.'.job_type_id > 1')
+			->leftJoin($r.'.Translation t');
 		return $q;
 	}
 }

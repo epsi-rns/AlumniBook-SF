@@ -16,4 +16,11 @@ class CompetencyTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Competency');
     }
+    
+	public function retrieveBackendCompetency(Doctrine_Query $q)
+	{
+		$r = $q->getRootAlias(); 
+		$q->leftJoin($r.'.Translation t');
+		return $q;
+	}
 }

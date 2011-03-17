@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        table_method: retrieveBackendContactType
         title: Manage Contact Type
         display: [ct_id, =contact_type]
         batch_actions: {}        

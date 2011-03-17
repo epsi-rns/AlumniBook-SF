@@ -16,4 +16,11 @@ class ContactTypeTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('ContactType');
     }
+    
+	public function retrieveBackendContactType(Doctrine_Query $q)
+	{
+		$r = $q->getRootAlias(); 
+		$q->leftJoin($r.'.Translation t');
+		return $q;
+	}
 }

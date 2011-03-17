@@ -16,4 +16,11 @@ class JobPositionTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('JobPosition');
     }
+    
+	public function retrieveBackendJobPosition(Doctrine_Query $q)
+	{
+		$r = $q->getRootAlias(); 
+		$q->leftJoin($r.'.Translation t');
+		return $q;
+	}    
 }
