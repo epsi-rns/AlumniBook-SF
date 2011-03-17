@@ -12,5 +12,9 @@ class CommunityForm extends BaseCommunityForm
 {
   public function configure()
   {
+    $this->widgetSchema['type_id'] = new sfWidgetFormChoice(array(
+		'choices' => Community::getTypeIdChoices(),
+		'expanded' => true
+    ));	  	  
   }
 }

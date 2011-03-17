@@ -12,8 +12,23 @@
  */
 class Community extends BaseCommunity
 {
+	static protected $type_choices = array(
+		1 => 'Academic Formal',
+		2 => 'Student Club'
+	);
+	
 	public function __toString()
 	{
 		return sprintf('%s', $this->get('community'));
 	}
+	
+	static public function getTypeIdChoices()
+	{
+		return self::$type_choices;
+	}
+  
+	public function getTypeIdText()
+	{
+		return $this->type_choices[ $this->get('type_id') ];
+	}	
 }

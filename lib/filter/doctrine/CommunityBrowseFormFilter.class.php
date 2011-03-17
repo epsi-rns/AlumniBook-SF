@@ -48,7 +48,8 @@ class CommunityBrowseFormFilter extends BaseCommunityFormFilter
 	
     $query = Doctrine_Core::getTable('Community')
       ->createQuery('c')      
-      ->select('count(ac.cid) as total, c.cid, c.community, c.brief, '
+      ->select('count(ac.cid) as total, '
+        .'c.cid, c.community, c.brief, c.type_id, '
 		.'f.faculty_id, tf.faculty, '
 		.'d.department_id, td.department, '
 		.'p.program_id, tp.program')

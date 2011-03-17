@@ -3,6 +3,7 @@ Community:
     cid:           1
     community:     Sipil (Regular)
     brief:         S
+    type_id:       1
     department_id: 401
     faculty_id:    4
     program_id:    10
@@ -10,6 +11,7 @@ Community:
     cid:           2
     community:     Mesin (Regular)
     brief:         M
+    type_id:       1
     department_id: 402
     faculty_id:    4
     program_id:    10
@@ -17,6 +19,7 @@ Community:
     cid:           3
     community:     Elektro (Regular)
     brief:         E
+    type_id:       1
     department_id: 403
     faculty_id:    4
     program_id:    10
@@ -24,6 +27,7 @@ Community:
     cid:           4
     community:     Metalurgi (Regular)
     brief:         Mt
+    type_id:       1
     department_id: 404
     faculty_id:    4
     program_id:    10
@@ -31,6 +35,7 @@ Community:
     cid:           5
     community:     Arsitek (Regular)
     brief:         A
+    type_id:       1
     department_id: 405
     faculty_id:    4
     program_id:    10    
@@ -38,6 +43,7 @@ Community:
     cid:           6
     community:     Kimia (Regular)
     brief:         GP
+    type_id:       1
     department_id: 406
     faculty_id:    4
     program_id:    10 
@@ -45,12 +51,14 @@ Community:
     cid:           7
     community:     Industri (Regular)
     brief:         TI
+    type_id:       1
     department_id: 407
     faculty_id:    4
     program_id:    10
   8:
     cid:           8
     community:     Perkapalan (Regular)
+    type_id:       1
     department_id: 408
     faculty_id:    4
     program_id:    10
@@ -58,24 +66,28 @@ Community:
   21:
     cid:           21
     community:     Sipil (Ekstensi)
+    type_id:       1
     department_id: 401
     faculty_id:    4
     program_id:    11
   22:
     cid:           22
     community:     Mesin (Ekstensi)
+    type_id:       1
     department_id: 402
     faculty_id:    4
     program_id:    11
   23:
     cid:           23
     community:     Elektro (Ekstensi)
+    type_id:       1
     department_id: 403
     faculty_id:    4
     program_id:    11
   26:
     cid:           26
     community:     Kimia (Ekstensi)
+    type_id:       1
     department_id: 406
     faculty_id:    4
     program_id:    11
@@ -83,30 +95,35 @@ Community:
   41:
     cid:           41
     community:     Sipil (Magister)
+    type_id:       1
     department_id: 401
     faculty_id:    4
     program_id:    21
   42:
     cid:           42
     community:     Mesin (Magister)
+    type_id:       1
     department_id: 402
     faculty_id:    4
     program_id:    21
   44:
     cid:           44
     community:     Metalurgi (Magister)
+    type_id:       1
     department_id: 404
     faculty_id:    4
     program_id:    21
   46:
     cid:           46
     community:     Kimia (Magister)
+    type_id:       1
     department_id: 406
     faculty_id:    4
     program_id:    21
   47:
     cid:           47
     community:     Industri (Magister)
+    type_id:       1
     department_id: 407
     faculty_id:    4
     program_id:    21
@@ -114,12 +131,14 @@ Community:
   61:
     cid:           61
     community:     Elektronika (S2)
+    type_id:       1
     department_id: 403
     faculty_id:    4
     program_id:    20
   62:
     cid:           62
     community:     Optoelektronika (S2)
+    type_id:       1
     department_id: 403
     faculty_id:    4
     program_id:    20
@@ -127,18 +146,21 @@ Community:
   81:
     cid:           81
     community:     Sipil (Doktor)
+    type_id:       1
     department_id: 401
     faculty_id:    4
     program_id:    30
   82:
     cid:           82
     community:     Mesin (Doktor)
+    type_id:       1
     department_id: 402
     faculty_id:    4
     program_id:    30
   83:
     cid:           83
     community:     Elektro (Doktor)
+    type_id:       1
     department_id: 403
     faculty_id:    4
     program_id:    30
@@ -146,7 +168,32 @@ Community:
 # Good idea, but need careful consideration
   101:
     cid:           101
-    community:     Boy Scout
+    community:     Madah Bahana (Marching Band)
+    brief:         MB
+    type_id:       2
     department_id: -1
     faculty_id:    -1
     program_id:    -1
+  102:
+    cid:           102
+    community:     Interrupt-04
+    type_id:       2
+    department_id: -1
+    faculty_id:    4
+    program_id:    -1
+  103:
+    cid:           103
+    community:     Tim Robot UI
+    brief:         TRUI
+    type_id:       2
+    department_id: -1
+    faculty_id:    4
+    program_id:    -1
+  104:
+    cid:           104
+    community:     Air Cushion Vehicle Club
+    brief:         ACVC
+    type_id:       2
+    department_id: 402
+    faculty_id:    4
+    program_id:    10

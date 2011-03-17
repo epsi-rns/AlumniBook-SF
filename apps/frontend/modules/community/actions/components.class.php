@@ -15,8 +15,9 @@ class communityComponents extends sheetComponentsExt
 	{
 	  $this
 	    ->th_action()
-	    ->th('Community')
-	    ->th('Brief')
+	    ->th('Type')
+	    ->th('Community')	    
+	    ->th('Brief')	    
 	    ->th('Members')
 		->th('Department')
 	    ->th('Faculty')
@@ -48,11 +49,13 @@ class communityComponents extends sheetComponentsExt
 		'?prog='.$row->getProgramId()
 	  );
 	  $total = $row->getTotal() ?  $row->getTotal() : '';
+	  $type = ($row->get('type_id')==2)? 'Club' : 'Formal';
 	  		
 	  $this
 		->td_action($link_editor)
+		->td($type)
 		->td($link_comy)
-		->td($row->getBrief())
+		->td($row->getBrief())		
 		->td($total)
 		->td($link_dept)
 		->td($link_fcly)

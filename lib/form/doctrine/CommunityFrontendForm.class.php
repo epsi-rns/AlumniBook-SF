@@ -21,7 +21,11 @@ class CommunityFrontendForm extends BaseCommunityForm
 		->createQuery('r')
 		->leftJoin('r.Translation t')
 		->orderBy('r.program_id');	  
-	  
+		
+    $this->widgetSchema['type_id'] = new sfWidgetFormChoice(array(
+		'choices' => Community::getTypeIdChoices(),
+		'expanded' => true
+    ));	  
     $this->widgetSchema['department_id'] = new sfWidgetFormChoice(array(
 		'choices' => array(null => '')
 	));

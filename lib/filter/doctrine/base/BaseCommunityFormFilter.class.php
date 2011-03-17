@@ -15,6 +15,7 @@ abstract class BaseCommunityFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'community'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'brief'         => new sfWidgetFormFilterInput(),
+      'type_id'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'department_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'add_empty' => true)),
       'faculty_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Faculty'), 'add_empty' => true)),
       'program_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Program'), 'add_empty' => true)),
@@ -23,6 +24,7 @@ abstract class BaseCommunityFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'community'     => new sfValidatorPass(array('required' => false)),
       'brief'         => new sfValidatorPass(array('required' => false)),
+      'type_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'department_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Department'), 'column' => 'department_id')),
       'faculty_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Faculty'), 'column' => 'faculty_id')),
       'program_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Program'), 'column' => 'program_id')),
@@ -48,6 +50,7 @@ abstract class BaseCommunityFormFilter extends BaseFormFilterDoctrine
       'cid'           => 'Number',
       'community'     => 'Text',
       'brief'         => 'Text',
+      'type_id'       => 'Number',
       'department_id' => 'ForeignKey',
       'faculty_id'    => 'ForeignKey',
       'program_id'    => 'ForeignKey',

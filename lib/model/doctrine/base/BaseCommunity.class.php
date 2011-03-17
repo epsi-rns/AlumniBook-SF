@@ -8,6 +8,7 @@
  * @property integer $cid
  * @property string $community
  * @property string $brief
+ * @property integer $type_id
  * @property integer $department_id
  * @property integer $faculty_id
  * @property integer $program_id
@@ -19,6 +20,7 @@
  * @method integer      getCid()           Returns the current record's "cid" value
  * @method string       getCommunity()     Returns the current record's "community" value
  * @method string       getBrief()         Returns the current record's "brief" value
+ * @method integer      getTypeId()        Returns the current record's "type_id" value
  * @method integer      getDepartmentId()  Returns the current record's "department_id" value
  * @method integer      getFacultyId()     Returns the current record's "faculty_id" value
  * @method integer      getProgramId()     Returns the current record's "program_id" value
@@ -29,6 +31,7 @@
  * @method Community    setCid()           Sets the current record's "cid" value
  * @method Community    setCommunity()     Sets the current record's "community" value
  * @method Community    setBrief()         Sets the current record's "brief" value
+ * @method Community    setTypeId()        Sets the current record's "type_id" value
  * @method Community    setDepartmentId()  Sets the current record's "department_id" value
  * @method Community    setFacultyId()     Sets the current record's "faculty_id" value
  * @method Community    setProgramId()     Sets the current record's "program_id" value
@@ -59,9 +62,14 @@ abstract class BaseCommunity extends sfDoctrineRecord
              'unique' => true,
              'length' => 50,
              ));
-        $this->hasColumn('brief', 'string', 2, array(
+        $this->hasColumn('brief', 'string', 4, array(
              'type' => 'string',
              'unique' => true,
+             'length' => 4,
+             ));
+        $this->hasColumn('type_id', 'integer', 2, array(
+             'type' => 'integer',
+             'notnull' => true,
              'length' => 2,
              ));
         $this->hasColumn('department_id', 'integer', 2, array(

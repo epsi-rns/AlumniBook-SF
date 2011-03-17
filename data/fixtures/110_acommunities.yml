@@ -32,7 +32,12 @@ ACommunities:
 <?php endfor ?>
 
 # Good idea, but need careful consideration
-  Rizqi Lagi:
+  Rizqi Int-04:
     aid: 25
-    cid: 101
-    class_year: 1993    
+    cid: 102
+    class_year: 1996  
+  Rizqi fake ACVC:
+    aid: 25
+    cid: 104
+    class_year: 1996    
+    class_sub: fake

@@ -45,4 +45,19 @@ class modalActions extends sfActionsAlumni
       
 	$this->org = $this->getRowsByPager($request, $query, 'Organization');
   }   
+  
+  public function executeCommunity(sfWebRequest $request)
+  {
+    $this->formFilter = new CommunityModalFormFilter();    
+
+	$filters = $this->getRequestFilter($request, 
+		$this->formFilter->getName());
+
+    $this->formFilter->bind( $filters );            
+    $query = $this->formFilter->buildQuery(
+			$this->formFilter->getValues()
+		);		      
+      
+	$this->community = $this->getRowsByPager($request, $query, 'Community');
+  }    
 }

@@ -131,7 +131,8 @@ class ajaxActions extends sfActionsAlumni
 		->createQuery('r')
 		->leftJoin('r.Translation t')
 		->where('t.lang = ?', $this->getUser()->getCulture())		
-		->where('r.faculty_id = ?', $index);
+		->andWhere('r.faculty_id = ?', $index)
+		->orWhere('r.faculty_id = -1');
 
 	$w = new sfWidgetFormDoctrineChoice(array(
 		'model' => 'Department', 'query' => $query,	'add_empty' => $all

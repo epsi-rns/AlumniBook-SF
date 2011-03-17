@@ -1,4 +1,7 @@
 <?php 
+	use_helper('sfMooDiaBox'); 
+	plgContentDiaBoxFrameActivate();
+	
 	use_stylesheets_for_form($form); 
 	use_javascripts_for_form($form);
 
@@ -14,6 +17,7 @@
 	$url_form = url_for('acommunities/'
 		.($isNew ? 'create' : 'update?did='.$did));
 ?>
+
 <script type="text/javascript">
 	window.addEvent("domready",function(){	
 		document.id('a_communities_cid')

@@ -19,10 +19,13 @@ class ACommunitiesForm extends BaseACommunitiesForm
       $this['faculty_id'], $this['department_id']
     );
     
-    $this->widgetSchema['cid'] = new sfWidgetFormDoctrineChoice(
-		array('model' => $this->getRelatedModelName('Community'), 
-		'add_empty' => '--Select Community--'));
-    
+	$this->widgetSchema['cid'] = new sfWidgetFormInputLookupModal(
+		array(	'model' => $this->getRelatedModelName('Community'), 
+				'link_text' => 'Pick Community', 
+				'link_route' => 'modal/community'),
+		array(	'class' => 'icon_pick', 
+				'title' => 'Lookup Community Name')
+	);    
     $this->widgetSchema->setLabels(array(
 		'cid' => 'Campus Community',
 		'class_year'	=> 'Class of (year)',
